@@ -1,0 +1,16 @@
+Temp/
+.metadata/
+.settings/
+*/target/
+*.classpath
+*.project
+/target/
+
+Application/deleteMe.txt
+Demo/Test/Servers/Tomcat v8.0 Server at localhost-config/web.xml
+Docs/deleteMe.txt
+Demo/Test/Servers/Tomcat v8.0 Server at localhost-config/catalina.policy
+Demo/Test/Servers/Tomcat v8.0 Server at localhost-config/catalina.properties
+Demo/Test/Servers/Tomcat v8.0 Server at localhost-config/context.xml
+Demo/Test/Servers/Tomcat v8.0 Server at localhost-config/tomcat-users.xml
+Demo/Test/Servers/Tomcat v8.0 Server at localhost-config/server.xml
