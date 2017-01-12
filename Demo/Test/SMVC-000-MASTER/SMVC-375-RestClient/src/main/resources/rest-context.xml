@@ -1,0 +1,36 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:security="http://www.springframework.org/schema/security"    
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd       
+        http://www.springframework.org/schema/security
+    	http://www.springframework.org/schema/security/spring-security.xsd
+    	http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+ 
+  
+   	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" lazy-init="false">
+		<property name="locations" value="classpath:app.properties" />
+	</bean>
+  
+   	<bean id="messageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+	
+	<bean id="config" class="corso.spring.mvc.demo.clients.configs.RestConfig" >
+	    <property name="maxConnPoolSize" value="${hc.pool.maxConnPoolSize}"/>
+	    <property name="maxThreadPerRoute" value="${hc.pool.maxThreadPerRoute}"/>
+	    <property name="connectionTimeOutInMillis" value="${hc.pool.connectionTimeOutInMillis}"/>
+	    <property name="requestTimeOutInMillis" value="${hc.pool.requestTimeOutInMillis}"/>	
+	 </bean>
+	
+		<bean id="restClientComponent" class="corso.spring.mvc.demo.clients.RestClientComponent">
+			<constructor-arg>
+				<ref bean="config" />
+			</constructor-arg>
+		</bean>
+     		
+</beans>

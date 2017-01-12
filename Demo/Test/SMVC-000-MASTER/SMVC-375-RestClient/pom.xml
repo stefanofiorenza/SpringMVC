@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>corso.spring.web.mvc</groupId>
+    <artifactId>SMVC-000-MASTER</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+ 
+ 
+  <artifactId>SMVC-375-RestClient</artifactId>  
+  <name>SMVC-375-RestClient</name>
+  
+    <dependencies>
+
+
+	<dependency>
+		<groupId>corso.spring.web.mvc</groupId>
+		<artifactId>SMVC-370-REST</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<type>war</type>
+	</dependency>
+    </dependencies>
+</project>
