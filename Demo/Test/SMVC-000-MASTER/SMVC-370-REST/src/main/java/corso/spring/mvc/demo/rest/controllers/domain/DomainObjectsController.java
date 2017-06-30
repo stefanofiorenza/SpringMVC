@@ -30,7 +30,7 @@ public class DomainObjectsController {
 	}
 	
 	@RequestMapping(value ="/demo/employee/get/json", method = RequestMethod.GET, 
-			produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+			produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Employee getEmployeeAsJson(){
 		return new Employee("stefano","stefano@email.it");
 	}
@@ -43,8 +43,8 @@ public class DomainObjectsController {
 	}
 	
 	@RequestMapping(value ="/demo/employee/echo/json", method = RequestMethod.POST, 
-			produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
-			consumes= MediaType.APPLICATION_JSON_UTF8_VALUE)
+			produces = MediaType.APPLICATION_JSON_VALUE,
+			consumes= MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Employee echoEmployeeAsJson(@RequestBody Employee inserted){
 		return inserted;
 	}
@@ -52,8 +52,8 @@ public class DomainObjectsController {
 	
 	
 	@RequestMapping(value ="/demo/employee/echo/entity/json", method = RequestMethod.POST, 
-			produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
-			consumes= MediaType.APPLICATION_JSON_UTF8_VALUE)
+			produces = MediaType.APPLICATION_JSON_VALUE,
+			consumes= MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody  ResponseEntity<Employee> echoEmployeeAsHttpEntity(@RequestBody Employee inserted){
 		 return new ResponseEntity<Employee>(inserted,HttpStatus.OK);
 		 
@@ -62,8 +62,8 @@ public class DomainObjectsController {
 
 	
 	@RequestMapping(value ="/demo/employee/echo/entity/slow/json", method = RequestMethod.POST, 
-			produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
-			consumes= MediaType.APPLICATION_JSON_UTF8_VALUE)
+			produces = MediaType.APPLICATION_JSON_VALUE,
+			consumes= MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody  ResponseEntity<Employee> echoEmployeeAsHttpEntityPut(@RequestBody Employee inserted){
 		try {
 			Thread.sleep(3000L);

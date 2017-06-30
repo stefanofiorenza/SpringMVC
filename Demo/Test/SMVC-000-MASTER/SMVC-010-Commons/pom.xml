@@ -5,7 +5,5 @@
     <artifactId>SMVC-000-MASTER</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>SMVC-350-ControllersIO</artifactId>
-  <packaging>war</packaging>
-  <name>SMVC-350-ControllersIO</name>
+  <artifactId>SMVC-010-Commons</artifactId>
 </project>

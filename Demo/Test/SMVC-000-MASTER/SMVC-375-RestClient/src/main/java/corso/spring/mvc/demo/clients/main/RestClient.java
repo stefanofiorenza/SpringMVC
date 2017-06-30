@@ -99,8 +99,8 @@ public class RestClient {
 		
 		//headers
 		HttpHeaders httpHeaders =new HttpHeaders();
-		httpHeaders.add(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_UTF8_VALUE);
-		httpHeaders.add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_UTF8_VALUE);
+		httpHeaders.add(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE);
+		httpHeaders.add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
 		System.out.println("Headers for "+ENDPOINT_POST_ENTITY_URI);
 		
 		//body

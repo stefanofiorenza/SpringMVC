@@ -18,8 +18,8 @@ public class AsynchRequestCallbackEmployeeImpl implements AsyncRequestCallback {
 	@Override
 	public void doWithRequest(AsyncClientHttpRequest request)
 			throws IOException {
-		request.getHeaders().add(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_UTF8_VALUE);
-		request.getHeaders().add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_UTF8_VALUE);
+		request.getHeaders().add(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE);
+		request.getHeaders().add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
 					
 		Employee postEmp= new Employee("TestPostEmp","TestPostEmp@email.it");
 		ObjectMapper jsonObjectMapper= new ObjectMapper();
