@@ -127,8 +127,10 @@ public class RestClient {
 		System.out.println("Before send");
 		AsyncRestTemplate asycTemp = new AsyncRestTemplate();
 		Map<String,String> urlVariable = new HashMap<String, String>();
+		
 		ListenableFuture<Employee> future = asycTemp.execute(ENDPOINT_POST_SLOW_ENTITY_URI, HttpMethod.POST, 
 				asynchRequestCallback, responseExtractor,urlVariable);
+		
 		Runnable separateThread= new EmployeeFutureParsingThread(future);
 		executorService.submit(separateThread);
 		System.out.println("do some work");

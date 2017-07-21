@@ -59,6 +59,14 @@
  
  
  		<!-- J2EE Web api -->
+	 	<dependency>
+		    <groupId>javax.servlet.jsp</groupId>
+		    <artifactId>javax.servlet.jsp-api</artifactId>
+		    <version>2.3.1</version>
+		    <scope>provided</scope>
+		</dependency>
+ 		
+ 		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -166,13 +174,15 @@
 	<module>SMVC-210-HandlersConfig</module>
 	<module>SMVC-300-Controllers</module>
 	<module>SMVC-310-ControllersConf</module>
-	<module>SMVC-320-ControllersXml</module>
-	<module>SMVC-350-ControllersIO</module>
+	<module>SMVC-320-ControllersXml</module>	
 	<module>SMVC-400-StateMng</module>
 	<module>SMVC-500-ViewResolvers</module>
 	<module>SMVC-600-Resources</module>
 	<module>SMVC-700-CustomTags</module>
 	<module>SMVC-010-Commons</module>
+	<module>SMVC-800-WebsocketClient</module>
+	<module>SMVC-800-WebsocketServer</module>
+	<module>SMVC-800-WebSocketJSR356</module>
   </modules>
    
 </project>

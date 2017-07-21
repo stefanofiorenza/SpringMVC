@@ -1,4 +1,4 @@
-package corso.spring.mvc.demo.basic.config;
+package corso.spring.mvc.demo.ws.configs;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -25,11 +25,12 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
 	}
 
 	private void registerDispatcherServlet(final ServletContext servletContext) {
-		WebApplicationContext dispatcherContext = createContext(MySmvcInitializer.class);
+		WebApplicationContext dispatcherContext = createContext(MySmvcInitializer.class,WebSocketConfig.class);
 		DispatcherServlet dispatcherServlet = new DispatcherServlet(
 				dispatcherContext);		
 		
 		ServletRegistration.Dynamic dispatcher =  servletContext.addServlet(DISPATCHER_SERVLET_NAME, dispatcherServlet);
+		dispatcher.setAsyncSupported(true);
 		dispatcher.setLoadOnStartup(1);
 		dispatcher.addMapping("/");
 	}

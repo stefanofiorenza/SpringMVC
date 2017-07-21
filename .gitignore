@@ -14,3 +14,4 @@ Demo/Test/Servers/Tomcat v8.0 Server at localhost-config/catalina.properties
 Demo/Test/Servers/Tomcat v8.0 Server at localhost-config/context.xml
 Demo/Test/Servers/Tomcat v8.0 Server at localhost-config/tomcat-users.xml
 Demo/Test/Servers/Tomcat v8.0 Server at localhost-config/server.xml
+Docs/Note/**.tmp

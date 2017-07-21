@@ -16,8 +16,11 @@ public class EmployeeFutureParsingThread implements Runnable{
 	@Override
 	public void run() {
 		try {
-			Employee employee = this.employeeFuture.get();
-			System.out.println(employee);
+			while(this.employeeFuture.isDone()){
+				Employee employee = this.employeeFuture.get();
+				System.out.println(employee);
+			}
+		
 		
 			
 		} catch (InterruptedException e) {
