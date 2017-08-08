@@ -15,6 +15,7 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessageType;
+import org.springframework.messaging.simp.annotation.SendToUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.LinkedMultiValueMap;
@@ -70,6 +71,14 @@ public class MessageController
     public MessageBean forwardMessage(Message<MessageBean> message) throws Exception   {
     	logMessageDetails(message);
     	updateMessage(message.getPayload(),"Forward");
+    	return message.getPayload();
+    }
+    
+    @MessageMapping("/forward")
+    @SendToUser("registeredUser")
+    public MessageBean forwardMessageToUser(Message<MessageBean> message) throws Exception   {
+    	logMessageDetails(message);
+    	updateMessage(message.getPayload(),"forwardMessageToUser");
     	return message.getPayload();
     }
     

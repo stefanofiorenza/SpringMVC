@@ -1,0 +1,42 @@
+
+Test URLS:
+
+http://localhost:8080/SMVC-375-JACKSON/demo/api/v1/contacts/3/groups/1
+http://localhost:8080/SMVC-375-JACKSON/demo/api/v1/contacts/search/?name=stefano
+
+
+
+POST:
+http://localhost:8080/SMVC-375-JACKSON/demo/api/v1/contacts/create
+{
+	"id": 8,
+	"name": "Mock Name",
+	"telephone": "069843298332",
+	"joinDate": "27-01-2017",
+	"pictureAsUrl": "/pics/Ivan.jpg",
+	"pictureAsBytes": null,
+	"type": "Business",
+	 "department": "A Mock Department",
+	"groups": [
+	  {
+	    "id": 0,
+	    "name": "group0",
+	    "contacts": []
+	  },
+	  {
+	    "id": 1,
+	    "name": "group1",
+	    "contacts": []
+	  },
+	  {
+	    "id": 2,
+	    "name": "group2",
+	    "contacts": []
+	  }
+	 ],
+	"customer": {
+	  "id": 3,
+	  "name": "MockCustomer",
+	  "contacts": []
+	}
+}

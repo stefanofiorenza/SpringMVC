@@ -1,0 +1,46 @@
+
+TEST CORS:
+http://client.cors-api.appspot.com/client
+Headers:
+X-header1: val1
+
+http://localhost:8080/SMVC-375-JACKSON/demo/contacts/search?filterA=A&hiredOn=02-03-2001
+
+
+/groups/search/
+
+
+POST:
+http://localhost:8080/SMVC-375-JACKSON/demo/contacts/create
+{
+	"id": 8,
+	"name": "Mock Name",
+	"telephone": "069843298332",
+	"joinDate": "27-01-2017",
+	"pictureAsUrl": "/pics/Ivan.jpg",
+	"pictureAsBytes": null,
+	"type": "Business",
+	 "department": "A Mock Department",
+	"groups": [
+	  {
+	    "id": 0,
+	    "name": "group0",
+	    "contacts": []
+	  },
+	  {
+	    "id": 1,
+	    "name": "group1",
+	    "contacts": []
+	  },
+	  {
+	    "id": 2,
+	    "name": "group2",
+	    "contacts": []
+	  }
+	 ],
+	"customer": {
+	  "id": 3,
+	  "name": "MockCustomer",
+	  "contacts": []
+	}
+}

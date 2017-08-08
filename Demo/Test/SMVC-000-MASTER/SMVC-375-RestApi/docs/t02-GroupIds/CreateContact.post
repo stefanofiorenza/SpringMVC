@@ -1,0 +1,13 @@
+POST:
+http://localhost:8080/SMVC-375-JACKSON/demo/contacts/create
+{
+	"id": 8,
+	"name": "Mock Name",
+	"telephone": "069843298332",
+	"joinDate": "27-01-2017",		
+	"type": "Business",
+	"department": "A Mock Department",
+	"groups": [1,2,3]	
+	"customer": 3	  
+	}
+}

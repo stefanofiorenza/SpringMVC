@@ -1,0 +1,35 @@
+
+
+CORS Code Review:
+
+AbstractHandlerMapping
+	.getHandler
+		merge global and local cors config
+		call to .getCorsHandlerExecutionChain
+
+		.getCorsHandlerExecutionChain:
+			
+
+.getHandlerInternal
+
+
+
+CorsInterceptor.
+
+
+
+DefaultCorsProcessor.handleInternal():
+
+	gestione headers
+	check origin
+	
+	
+	
+	CorsConfiguration.checkOrigin()
+	
+	
+	
+
+	REQUEST:
+	
+	RequestResponseBodyMethodProcessor

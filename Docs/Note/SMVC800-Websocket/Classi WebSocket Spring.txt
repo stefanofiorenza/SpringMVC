@@ -1,0 +1,42 @@
+
+solo websocket
+
+StandardWebSocketSession
+
+AbstractStandardUpgradeStrategy
+
+
+DefaultHandshakeHandler.doHandshake
+
+
+SockJsHttpRequestHandler.getSockJsPath(HttpServletRequest) line: 98	
+SockJsHttpRequestHandler.handleRequest(HttpServletRequest, HttpServletResponse) line: 88	
+HttpRequestHandlerAdapter.handle(HttpServletRequest, HttpServletResponse, Object) line: 51	
+DispatcherServlet.doDispatch(HttpServletRequest, HttpServletResponse) line: 945	
+
+
+
+HandShake:
+
+	DefaultHandshakeHandler.doHandshake(ServerHttpRequest, ServerHttpResponse, WebSocketHandler, Map<String,Object>) line: 151	
+	WebSocketTransportHandler.handleRequest(ServerHttpRequest, ServerHttpResponse, WebSocketHandler, SockJsSession) line: 83	
+	DefaultSockJsService(TransportHandlingSockJsService).handleTransportRequest(ServerHttpRequest, ServerHttpResponse, WebSocketHandler, String, String) line: 254	
+	DefaultSockJsService(AbstractSockJsService).handleRequest(ServerHttpRequest, ServerHttpResponse, String, WebSocketHandler) line: 311	
+	SockJsHttpRequestHandler.handleRequest(HttpServletRequest, HttpServletResponse) line: 88	
+	HttpRequestHandlerAdapter.handle(HttpServletRequest, HttpServletResponse, Object) line: 51	
+	DispatcherServlet.doDispatch(HttpServletRequest, HttpServletResponse) line: 945	
+
+
+OnOpenConnection:
+	AbstractStandardUpgradeStrategy.
+
+	
+	
+	StandardWebSocketHandlerAdapter.onOpen(Session, EndpointConfig) line: 62	
+	WsHttpUpgradeHandler.init(WebConnection) line: 127	
+	
+
+
+
+
+http://localhost:8080/spring-mvc-websockets/index.html

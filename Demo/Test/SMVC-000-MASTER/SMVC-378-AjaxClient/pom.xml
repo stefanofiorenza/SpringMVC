@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>corso.spring.web.mvc</groupId>
+    <artifactId>SMVC-000-MASTER</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>SMVC-378-AjaxClient</artifactId>
+  <packaging>war</packaging>
+  <name>SMVC-378-AjaxClient</name>
+  <description>SMVC-378-AjaxClient</description>
+  
+    <dependencies>
+    
+    <dependency>
+	    <groupId>org.webjars</groupId>
+	    <artifactId>webjars-servlet-2.x</artifactId>
+	    <version>1.0</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.webjars</groupId>
+	    <artifactId>webjars-locator</artifactId>
+	    <version>0.32</version>
+	</dependency>
+        
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>bootstrap</artifactId>
+      <version>3.3.7</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>jquery</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+      
+  </dependencies>
+</project>
