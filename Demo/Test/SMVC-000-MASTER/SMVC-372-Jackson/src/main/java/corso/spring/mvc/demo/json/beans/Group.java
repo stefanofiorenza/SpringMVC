@@ -3,10 +3,10 @@ package corso.spring.mvc.demo.json.beans;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonView;
-
 import lombok.Getter;
 import lombok.Setter;
+
+import com.fasterxml.jackson.annotation.JsonView;
 
 public class Group {
 

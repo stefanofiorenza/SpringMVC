@@ -1,0 +1,12 @@
+Certs
+http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/cert/start?examCode=30454&userKey=stefano
+http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/cert/questions?examId=1&eeId=1
+
+Learning
+http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/learn/start?examCode=30454&userKey=stefano
+http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/learn/questions?eeId=1&pSize=10
+
+Questions (Search)
+http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/questions/?examCode=1001&qids=1,2,3&topic=thread&dRate=9
+http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/questions/1
+http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/questions/exam/200/topic/thread

@@ -9,4 +9,37 @@
   <packaging>war</packaging>
   <name>SMVC-375-RestApi</name>
   <description>SMVC-375-RestApi</description>
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>	
+   	<version.jdk>1.8</version.jdk>
+</properties>
+
+ 	 <build>	  		
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${version.jdk}</source>
+					<target>${version.jdk}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build> 
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>corso.spring.web.mvc</groupId>
+  		<artifactId>SMVC-372-Jackson</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>  	
+  	</dependency>
+  	
+  	<dependency>
+		<groupId>org.springframework.hateoas</groupId>
+		<artifactId>spring-hateoas</artifactId>
+		<version>0.23.0.RELEASE</version>
+	</dependency>
+	
+  </dependencies>
+  
 </project>

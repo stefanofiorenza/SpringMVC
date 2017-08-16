@@ -6,7 +6,10 @@
   <packaging>pom</packaging>
   <name>SMVC-000-MASTER</name>
   
+    
+		
    <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>		
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 		<spring.version>4.3.9.RELEASE</spring.version>	
@@ -40,6 +43,7 @@
         
 	</properties>
 	
+	
   <dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -68,14 +72,14 @@
 			    <groupId>org.springframework</groupId>
 			    <artifactId>spring-websocket</artifactId>
 			    <version>${spring.version}</version>
-			</dependency>
-		  
-		  	<!-- https://mvnrepository.com/artifact/org.springframework/spring-messaging -->
+			</dependency>		  
+	
 			<dependency>
 			    <groupId>org.springframework</groupId>
 			    <artifactId>spring-messaging</artifactId>
 			   <version>${spring.version}</version>
 			</dependency>
+		
  
  		<!-- J2EE Web api -->
 	 	<dependency>
@@ -234,6 +238,9 @@
 	<module>SMVC-200-Handlers</module>
 	<module>SMVC-210-HandlersConfig</module>
 	<module>SMVC-300-Controllers</module>
+	<module>SMVC-378-AjaxClient</module>
+	<module>SMVC-372-Jackson</module>
+	<module>SMVC-375-RestApi</module>	
 	<module>SMVC-400-StateMng</module>
 	<module>SMVC-500-ViewResolvers</module>
 	<module>SMVC-600-Resources</module>
@@ -243,9 +250,8 @@
 	<module>SMVC-800-WebsocketServer</module>
 	<module>SMVC-800-WebSocketJSR356</module>
 	<module>SMVC-800-WebSocketSpringStomp</module>
-	<module>SMVC-378-AjaxClient</module>
-	<module>SMVC-372-Jackson</module>
-	<module>SMVC-375-RestApi</module>
+
+	<module>SMVC-LAB-PROMETRICS</module>
   </modules>
    
 </project>

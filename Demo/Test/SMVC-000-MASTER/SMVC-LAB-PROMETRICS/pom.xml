@@ -5,7 +5,13 @@
     <artifactId>SMVC-000-MASTER</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>SMVC-010-Commons</artifactId>
-      
-      
+  <artifactId>SMVC-LAB-PROMETRICS</artifactId>
+  <dependencies>
+  	<dependency>
+  		<groupId>apps.prometrics</groupId>
+  		<artifactId>PROMETRICS-Common</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+  <packaging>war</packaging>
 </project>

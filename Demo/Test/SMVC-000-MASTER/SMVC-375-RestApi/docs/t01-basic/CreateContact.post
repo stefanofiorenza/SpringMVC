@@ -1,8 +1,8 @@
 
 Test URLS:
 
-http://localhost:8080/SMVC-375-JACKSON/demo/api/v1/contacts/3/groups/1
-http://localhost:8080/SMVC-375-JACKSON/demo/api/v1/contacts/search/?name=stefano
+http://localhost:8080/SMVC-375-RestApi/demo/api/v4/contacts/3/groups/1
+http://localhost:8080/SMVC-375-RestApi/demo/api/v1/contacts/search/?name=stefano
 
 
 

@@ -8,4 +8,21 @@
   <artifactId>SMVC-100-Basics</artifactId>
   <packaging>war</packaging>
   <name>SMVC-100-Basics</name>
+  
+     <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>		
+        <maven.compiler.source>1.8</maven.compiler.source>
+      </properties>
+      
+     <build>	  		
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${version.jdk}</source>
+					<target>${version.jdk}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
