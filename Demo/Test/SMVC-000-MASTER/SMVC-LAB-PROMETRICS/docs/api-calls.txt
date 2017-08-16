@@ -1,6 +1,7 @@
+
 Certs
 http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/cert/start?examCode=30454&userKey=stefano
-http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/cert/questions?examId=1&eeId=1
+http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/cert/questions?eeId=1
 
 Learning
 http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/learn/start?examCode=30454&userKey=stefano
@@ -10,3 +11,47 @@ Questions (Search)
 http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/questions/?examCode=1001&qids=1,2,3&topic=thread&dRate=9
 http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/questions/1
 http://localhost:8080/SMVC-LAB-PROMETRICS/api/exams/questions/exam/200/topic/thread
+
+
+
+PUT, POST
+http://localhost:8080/SMVC-LAB-PROMETRICS/api/admin/questions
+
+DELETE
+http://localhost:8080/SMVC-LAB-PROMETRICS/api/admin/questions/id
+
+Mock Domanda
+{
+            "id": 100,
+            "content": "Which two method declarations are valid for an interface.? (Choose two)",
+            "answers":
+            [
+                {
+                    "identifier": "A",
+                    "content": "Public double methoda():",
+                    "correct": true
+                },
+                {
+                    "identifier": "B",
+                    "content": "static void methoda(double d1)",
+                    "correct": false
+                },
+                {
+                    "identifier": "C",
+                    "content": "public final double methoda ();",
+                    "correct": false
+                },
+                {
+                    "identifier": "D",
+                    "content": "abstract public void methoda ();",
+                    "correct": true
+                },
+                {
+                    "identifier": "E",
+                    "content": "protected void methoda(double d1);",
+                    "correct": false
+                }
+            ],
+            "rate": 0,
+            "explaination": "Some mock explaination"
+}
