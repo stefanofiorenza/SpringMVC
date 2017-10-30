@@ -8,6 +8,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.apache.commons.io.IOUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -34,12 +36,20 @@ import corso.spring.mvc.demo.clients.callbacks.RequestCallbackEmployeeImpl;
 import corso.spring.mvc.demo.clients.callbacks.ResponseEstractorEmployeeImpl;
 import corso.spring.mvc.demo.rest.beans.Employee;
 
+@Slf4j
 public class RestClient {
 	
-	private static final String ENDPOINT_GET_URI="http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/get/json";
-	private static final String ENDPOINT_POST_URI="http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/echo/xml";
+	private static final String ENDPOINT_GET_URI_JSON="http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/get/json";
+	private static final String ENDPOINT_GET_URI_XML="http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/get/xml";
 	
-	private static final String ENDPOINT_POST_ENTITY_URI="http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/echo/entity/json";
+	
+	private static final String ENDPOINT_POST_URI_JSON="http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/echo/json";	
+	private static final String ENDPOINT_POST_URI_XML="http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/echo/xml";
+	
+	
+	private static final String ENDPOINT_POST_ENTITY_URI_JSON="http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/echo/entity/json";
+	private static final String ENDPOINT_POST_ENTITY_URI_XML="http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/echo/entity/xml";
+	
 	private static final String ENDPOINT_POST_SLOW_ENTITY_URI="http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/echo/entity/slow/json";
 	
 	private static final ExecutorService executorService = Executors.newFixedThreadPool(10);
@@ -51,80 +61,84 @@ public class RestClient {
 		ApplicationContext context = new ClassPathXmlApplicationContext("rest-context.xml");
 		RestClientComponent restComponent= context.getBean(RestClientComponent.class);		
 		
-		//testRestGetResponseEntity(restComponent.getRestTemplate());
-		//testRestGetEntity(restComponent.getRestTemplate());
-		//testRestPostEntity(restComponent.getRestTemplate());
-		//testRestPostEntity(restComponent.getRestTemplate());
+		testRestGetResponseEntity(restComponent.getRestTemplate(),ENDPOINT_GET_URI_JSON);
+		testRestGetResponseEntity(restComponent.getRestTemplate(),ENDPOINT_GET_URI_XML);
 		
-		//testRestExchangeApi(restComponent.getRestTemplate());
+		testRestPostEntity(restComponent.getRestTemplate(),ENDPOINT_POST_URI_JSON);
+		testRestPostEntity(restComponent.getRestTemplate(),ENDPOINT_POST_URI_XML);
+		testRestPostObject(restComponent.getRestTemplate());
 		
-		//testRestExchangeApiWithCallback(restComponent.getRestTemplate());
+		testRestExchangeApi_PostToApiJson(restComponent.getRestTemplate());
+		
+		testRestExchangeApiWithCallback(restComponent.getRestTemplate());
 		testRestExchangeApiWithAsynchCallback();
 	}
 	
 	
-	private static void testRestGetResponseEntity(RestTemplate restTemplate){
+	
+	
+	private static void testRestGetResponseEntity(RestTemplate restTemplate, String uri){
 		
-		ResponseEntity<Employee> response = 
-				  restTemplate.getForEntity(ENDPOINT_GET_URI,Employee.class);
-		System.out.println(response);
-		System.out.println("ResponseBody: "+response.getBody());		
+		ResponseEntity<Employee> response =  restTemplate.getForEntity(uri,Employee.class);
+		log.info(response.toString());
+		log.info("ResponseBody: "+response.getBody());		
 	}
+	
+	
 	
 	private static void testRestGetEntity(RestTemplate restTemplate){
 		Employee emp = 
-				  restTemplate.getForObject(ENDPOINT_GET_URI,Employee.class);
-		System.out.println("Response: "+emp);	
+				  restTemplate.getForObject(ENDPOINT_GET_URI_JSON,Employee.class);
+		log.info("Response: "+emp);	
 	}
 	
-	private static void testRestPostEntity(RestTemplate restTemplate){
+	private static void testRestPostEntity(RestTemplate restTemplate, String uri){
 		Employee postEmp= new Employee("TestPostEmp","TestPostEmp@email.it");
 		HttpEntity<Employee> request= new HttpEntity<Employee>(postEmp);
 		
-		ResponseEntity<Employee> response = restTemplate.postForEntity(ENDPOINT_POST_URI,request,Employee.class);
-		System.out.println(response);
-		System.out.println("ResponseBody: "+response.getBody());		
+		ResponseEntity<Employee> response = restTemplate.postForEntity(ENDPOINT_POST_URI_XML,request,Employee.class);
+		log.info(response.toString());
+		log.info("ResponseBody: "+response.getBody());		
 	}
 	
 	
 	private static void testRestPostObject(RestTemplate restTemplate){
 		Employee postEmp= new Employee("TestPostEmp","TestPostEmp@email.it");
-		Employee empResponse =restTemplate.postForObject(ENDPOINT_POST_URI,postEmp,Employee.class);
-		System.out.println("Echo Response: "+empResponse);			
+		Employee empResponse =restTemplate.postForObject(ENDPOINT_POST_URI_XML,postEmp,Employee.class);
+		log.info("Echo Response: "+empResponse);			
 	}
 
 	
-	private static void testRestExchangeApi(RestTemplate restTemplate){
+	private static void testRestExchangeApi_PostToApiJson(RestTemplate restTemplate){
 		
 		
 		//headers
 		HttpHeaders httpHeaders =new HttpHeaders();
 		httpHeaders.add(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE);
 		httpHeaders.add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-		System.out.println("Headers for "+ENDPOINT_POST_ENTITY_URI);
+		log.info("Headers for "+ENDPOINT_POST_ENTITY_URI_JSON);
 		
 		//body
-		Employee postEmp= new Employee("TestPostEmp","TestPostEmp@email.it");
+		Employee entityToPost= new Employee("TestPostEmp","TestPostEmp@email.it");
 		
-		HttpEntity<Employee> request= new HttpEntity<Employee>(postEmp,httpHeaders);
-		ResponseEntity<Employee> response =restTemplate.exchange(ENDPOINT_POST_ENTITY_URI,
+		HttpEntity<Employee> request= new HttpEntity<Employee>(entityToPost,httpHeaders);
+		ResponseEntity<Employee> response =restTemplate.exchange(ENDPOINT_POST_ENTITY_URI_JSON,
 				HttpMethod.POST,request,Employee.class);
 				
-		System.out.println(response);
-		System.out.println("ResponseBody: "+response.getBody());			
+		log.info(response.toString());
+		log.info("ResponseBody: "+response.getBody());			
 	}
 	
 	
 	private static void testRestExchangeApiWithCallback(RestTemplate restTemplate){
 						
-		System.out.println("Before send");
-		restTemplate.execute(ENDPOINT_POST_ENTITY_URI, 
-				HttpMethod.POST,requestCallback, responseExtractor);
-		System.out.println("After send");		
+		log.info("Before send");
+		restTemplate.execute(ENDPOINT_POST_ENTITY_URI_JSON,	HttpMethod.POST,requestCallback, responseExtractor);
+		log.info("After send");		
 	}
 	
 	private static void testRestExchangeApiWithAsynchCallback(){
-		System.out.println("Before send");
+		log.info("Before send");
 		AsyncRestTemplate asycTemp = new AsyncRestTemplate();
 		Map<String,String> urlVariable = new HashMap<String, String>();
 		
@@ -133,8 +147,8 @@ public class RestClient {
 		
 		Runnable separateThread= new EmployeeFutureParsingThread(future);
 		executorService.submit(separateThread);
-		System.out.println("do some work");
-		System.out.println("End");
+		log.info("do some work");
+		log.info("End");
 		
 	}
 	

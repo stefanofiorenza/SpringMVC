@@ -3,8 +3,10 @@ package corso.spring.mvc.demo.clients.callbacks;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
+import lombok.extern.slf4j.Slf4j;
 import corso.spring.mvc.demo.rest.beans.Employee;
 
+@Slf4j
 public class EmployeeFutureParsingThread implements Runnable{
 
 	private Future<Employee> employeeFuture;
@@ -18,7 +20,7 @@ public class EmployeeFutureParsingThread implements Runnable{
 		try {
 			while(this.employeeFuture.isDone()){
 				Employee employee = this.employeeFuture.get();
-				System.out.println(employee);
+				log.info(employee.toString());
 			}
 		
 		

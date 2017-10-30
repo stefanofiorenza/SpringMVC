@@ -11,25 +11,15 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+
+	<!-- corso.spring.mvc.demo.rest.controllers.exceptions -->
 	<context:component-scan base-package="corso.spring.mvc.demo.rest.controllers.basic,
 										  	corso.spring.mvc.demo.rest.controllers.binaries,
-											corso.spring.mvc.demo.rest.controllers.domain
-											corso.spring.mvc.demo.rest.controllers.export" />
+											corso.spring.mvc.demo.rest.controllers.domain" />
     
      <!-- enable Matrix variable -->
-    <mvc:annotation-driven enable-matrix-variables="true" >
+    <mvc:annotation-driven enable-matrix-variables="true" />
     
-	     <!-- <mvc:message-converters>
-		       <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter">
-	            <property name="supportedMediaTypes">
-	                <list>
-	                    <value>image/jpeg</value>
-	                    <value>image/png</value>
-	                </list> 
-	            </property>
-	        </bean>  
-        </mvc:message-converters>-->
-    </mvc:annotation-driven>
 
   
   	 <!-- Upload Controller -->
@@ -41,28 +31,7 @@
 	        <property name="maxInMemorySize" value="1048576" /> <!-- 1MB -->	 
 	 </bean>
 	
-	
-	<!-- Download dynamic data Controller -->
-    <bean id ="xmlViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
-        	<property name="order" value="1"/>
-        	<property name="location" value="WEB-INF/classes/rest-views-context.xml"/>
-    </bean>
-	
-	
-	
-	
-    
-    <!--3) namespace tags for defaultViews prop -->
-    <!--
-    <mvc:view-resolvers>
-        <mvc:content-negotiation>
-            <mvc:default-views>
-                <bean class="org.springframework.web.servlet.view.xml.MappingJackson2XmlView"/>
-                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
-            </mvc:default-views>
-        </mvc:content-negotiation>
-    </mvc:view-resolvers>
-    -->
+
     
     
 </beans>

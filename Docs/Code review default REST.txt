@@ -1,0 +1,32 @@
+[org.springframework.http.converter.ByteArrayHttpMessageConverter@73a3f37e, org.springframework.http.converter.StringHttpMessageConverter@261e4922, org.springframework.http.converter.ResourceHttpMessageConverter@21f2f737, org.springframework.http.converter.xml.SourceHttpMessageConverter@6480ff95, org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter@854c878, org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter@5c57d709, org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@6a2ac8fb]
+
+
+ContentNegotiationViewResolver: cfg default:
+
+SupportedMedia:
+[application/octet-stream, text/plain, application/xml, text/xml, application/x-www-form-urlencoded, application/*+xml, multipart/form-data, application/json, application/*+json, */*]
+
+Strategies:
+ServletPathExtensionContentNegotiationStrategy
+HeaderContentNegotiationStrategy
+
+
+
+Return Controller.metodo:
+	ServletInvokableHandlerMethod.invokeAndHandle 
+		check se esiste mav e deve essere gestito. Se no? this.returnValueHandlers
+
+
+this.returnValueHandlers: (lista di HandlerMethodReturnValueHandlers per gestire risposta)
+	.handleReturnValue (viene scelto l handlerMethodReturn)
+	
+	nel caso di @RequestBody:
+	RequestResponseBodyMethodProcessor
+	
+
+HandlerMethodReturnValueHandlerComposite.getReturnValueHandler -> sceglie HandlerMethodReturnValueHandler
+in base a .supportsReturnType
+
+
+
+Default 

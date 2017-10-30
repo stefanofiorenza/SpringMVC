@@ -7,7 +7,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="welcome.htm">start demo</a>
 
+<hr/>
+<h3>BeanNameUrlHandlerMapping</h3>
+<a href="welcomeControllerName.htm">Welcome</a><br/>
+<a href="processControllerName.htm">Process</a><br/>
+<a href="helloworldcontrollerName.htm">Hello World</a><br/>
+<hr/>
+
+<h3>ControllerClassNameHandlerMapping</h3>
+<a href="welcome.htm">Welcome</a><br/>
+<a href="process.htm">Process</a><br/>
+<a href="helloworld.htm">Hello World</a><br/>
+<hr/>
+
+<hr/>
+<h3>Simple Handler Mapping Demo:</h3>
+<a href="welcomeSH.htm">Welcome</a><br/>
+<a href="processSH.htm">Process</a><br/>
+<a href="helloSH.htm">Hello</a><br/>
 </body>
 </html>

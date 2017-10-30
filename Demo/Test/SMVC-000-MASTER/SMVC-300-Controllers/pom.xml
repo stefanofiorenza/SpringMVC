@@ -8,4 +8,14 @@
   <artifactId>SMVC-300-Controllers</artifactId>
   <packaging>war</packaging>
   <name>SMVC-300-Controllers</name>
+  
+  <dependencies>
+  	<!-- <dependency>
+  		<groupId>corso.spring.web.mvc</groupId>
+  		<artifactId>SMVC-010-Commons</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency> -->
+  </dependencies>
+  
+  
 </project>

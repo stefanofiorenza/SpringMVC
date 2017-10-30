@@ -2,7 +2,7 @@ package corso.spring.mvc.demo.rest.beans;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-//@XmlRootElement(name = "Employee")
+@XmlRootElement(name = "Employee")
 public class Employee {
 
 	

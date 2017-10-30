@@ -1,0 +1,112 @@
+
+Basic00MappingController:
+
+	1)  http://localhost:8080/SMVC-370-REST/rest/basic/path
+	2)  http://localhost:8080/SMVC-370-REST/rest/basic/path (post)
+	3)  http://localhost:8080/SMVC-370-REST/rest/basic/path/headers (key=val)
+	4)  http://localhost:8080/SMVC-370-REST/rest/basic/path/multiple/headers (key1=val1" AND, "key2=val2)
+	5)  http://localhost:8080/SMVC-370-REST/rest/basic/path/headers/accept (Accept=application/json)
+	7)  http://localhost:8080/SMVC-370-REST/rest/basic/path/headers/produces (Accept=application/json)
+
+
+BasicIOMappingController:
+
+	@PathVariable
+	1) http://localhost:8080/SMVC-370-REST/rest/basic/category/1/sub/7
+	2.1) http://localhost:8080/SMVC-370-REST/rest/basic/path/io/5: TEST OK
+	2.2) http://localhost:8080/SMVC-370-REST/rest/basic/path/io/stefano: TEST ECC 404 a livello http
+
+	@RequestParam
+	3) http://localhost:8080/SMVC-370-REST/rest/basic/path/io/params?id=9 
+
+	@MatrixVariable
+	4.1) http://localhost:8080/SMVC-370-REST/rest/basic/path/io/matrix/4;q=9/other/6;multiple=1,2,3,4
+	4.2) http://localhost:8080/SMVC-370-REST/rest/basic/path/io/matrix/4;q=9/other/6;multiple=1,2,3,4
+
+	Matrix params parsed into map:
+	4.3) http://localhost:8080/SMVC-370-REST/rest/basic/path/io/matrix2/6;x=100;y=200;z=9,6,7;z=200/other/q=9;w=9;r=1,2,3,4
+
+
+	5) HEADERS:
+	Example
+	Host                    localhost:8080
+	Accept                  text/html,application/xhtml+xml,application/xml;q=0.9
+	Accept-Language         fr,en-gb;q=0.7,en;q=0.3
+	Accept-Encoding         gzip,deflate
+	Accept-Charset          ISO-8859-1,utf-8;q=0.7,*;q=0.7
+	Keep-Alive              300
+	@RequestHeader
+	5.1) http://localhost:8080/SMVC-370-REST/rest//basic/demo/io/headers
+
+	
+	
+
+DomainObjectsController:
+
+	1) Json (default)
+	http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/get/json (produces on server side)
+	Accept: application/json
+
+	
+	http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/get/xml (produces on server side)
+	Accept: application/xml
+
+	
+	2) (Echo demo)
+	2.1) json
+	http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/echo/json
+	POST{"name":"stefano","email":"stefano@email.it"}
+	Accept: application/json
+	Content-Type: application/json
+
+	2.2) xml
+	http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/echo/xml
+	POST: <Employee><name>stefano</name><email>stefano@email.it<email></Employee>
+	Accept: application/xml
+	Content-Type: application/xml
+
+	
+	
+BINARIES: DownloadController (tutti i tests in browser url ))
+
+1) HttpResponse
+	http://localhost:8080/SMVC-370-REST/rest/binaries/download/httpResponse 
+	
+2) HttpEntity:
+	http://localhost:8080/SMVC-370-REST/rest/binaries/download/httpEntity 
+		
+3) Resource
+	http://localhost:8080/SMVC-370-REST/rest/binaries/download/resource 
+	
+4) byte[] ?
+	http://localhost:8080/SMVC-370-REST/rest/binaries/download/bytes 
+
+
+UPLOADS (IN PAGE)
+http://localhost:8080/SMVC-370-REST/rest/binaries/upload/single
+
+EXPORTS:
+
+http://localhost:8080/SMVC-370-REST/rest/export/csv
+http://localhost:8080/SMVC-370-REST/rest/export/excel
+
+http://localhost:8080/SMVC-370-REST/rest/export.csv
+http://localhost:8080/SMVC-370-REST/rest/export.xslx
+http://localhost:8080/SMVC-370-REST/rest/export.xml
+http://localhost:8080/SMVC-370-REST/rest/export.json
+
+
+http://localhost:8080/SMVC-370-REST/rest/export/employees -> defaults to json
+http://localhost:8080/SMVC-370-REST/rest/export/employees?type=csv
+	
+	CONSUMES: json
+	Oggetti mapping:
+	
+	HttpServletRequest
+	InputStream
+	byte[]
+	java.io.Reader
+	@RequestPart (multipart http (uploads))
+	
+
+	http://localhost:8080/SMVC-370-REST/rest/domain/demo/employee/res/bytes

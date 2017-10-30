@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd"> 
+
+<tiles-definitions>
+   
+ <!--  AUTH PAGES -->
+<!--  <definition name="views/auth/login" extends="baseLayout">
+  <put-attribute name="title" value="Cv Online: Login" />   
+  <put-attribute name="content" value="/WEB-INF/pages/auth/login.jsp" />
+ </definition>
+   
+ <definition name="views/auth/logout" extends="baseLayout"> 
+  <put-attribute name="title" value="Cv Online: Logout" />
+  <put-attribute name="content" value="/WEB-INF/pages/auth/logout.jsp" />
+ </definition>
+ 
+ <definition name="views/auth/denied" extends="baseLayout">
+  <put-attribute name="title" value="Cv Online: Denied" />  
+  <put-attribute name="content" value="/WEB-INF/pages/auth/denied.jsp" />
+ </definition> -->
+ 
+ <definition name="views/main/index" extends="baseLayout">
+  <put-attribute name="title" value="Cv Online:Main" />  
+  <put-attribute name="content" value="/WEB-INF/pages/main/content.jsp" />
+ </definition>
+  
+ <definition name="views/main/registrazione" extends="baseLayout">
+  <put-attribute name="title" value="Cv Online: Registrazione" />  
+  <put-attribute name="content" value="/WEB-INF/pages/registrazione/registrazione.jsp" />
+ </definition>
+   
+</tiles-definitions>

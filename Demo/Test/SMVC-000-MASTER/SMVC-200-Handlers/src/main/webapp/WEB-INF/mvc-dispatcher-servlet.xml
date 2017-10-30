@@ -1,28 +1,66 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans 
-	xmlns="http://www.springframework.org/schema/beans"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+<beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="
-        http://www.springframework.org/schema/beans     
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context 
-        http://www.springframework.org/schema/context/spring-context.xsd
-        http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix">
-			<value>/WEB-INF/pages/</value>
-		</property>
-		<property name="suffix">
-			<value>.jsp</value>
-		</property>
-	</bean>
+	<!--HANDLER MAPPINGS -->
+	
+	<!-- ****************************************************************************-->
+	<!-- 1) org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping:
+	criterio default : uri=controllerBeanName  -->
+	
+		<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+			<property name="order" value="1" />
+		</bean>	
+	
+	
+		
+	<!-- ****************************************************************************-->
+	<!-- 2) org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping:
+			criterio naming convention WelcomeController =  welcome.htm (URI)-->
+			
+		<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
+	   		<property name="order" value="2" />
+		</bean>
+		
+		<!-- ****************************************************************************-->
 
 	
-	<context:component-scan base-package="corso.spring.mvc.demo.basic.annotations" />
+	<!-- ****************************************************************************-->
+	<!-- 3) org.springframework.web.servlet.handler.SimpleUrlHandlerMapping:
+	 	Proprietà Mappings: uri = nomeBeanController -->
+	 	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	      <property name="mappings">
+			<value>
+				/helloSH.htm=helloWorldControllerName
+				/welcomeSH.htm=welcomeControllerName
+				/processSH.htm=processControllerName				
+			</value>
+	      </property>
+	      <property name="order" value="3" />
+	 </bean>
+	 
+	 <bean name="helloWorldControllerName" class="corso.spring.mvc.demo.handlers.controllers.HelloWorldController" />
+	 <bean name="welcomeControllerName" class="corso.spring.mvc.demo.handlers.controllers.WelcomeController" />
+	 <bean name="processControllerName" class="corso.spring.mvc.demo.handlers.controllers.ProcessController" />
+	
+	
+	<!-- ****************************************************************************-->
+	
+	
+	
+	
+	
+	<bean id="viewResolver"
+    	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+        <property name="prefix">
+            <value>/WEB-INF/pages/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
 
+	
 </beans>
