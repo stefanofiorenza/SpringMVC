@@ -91,7 +91,7 @@ http://localhost:8080/SMVC-370-REST/rest/export/csv
 http://localhost:8080/SMVC-370-REST/rest/export/excel
 
 http://localhost:8080/SMVC-370-REST/rest/export.csv
-http://localhost:8080/SMVC-370-REST/rest/export.xslx
+http://localhost:8080/SMVC-370-REST/rest/export.xslx $
 http://localhost:8080/SMVC-370-REST/rest/export.xml
 http://localhost:8080/SMVC-370-REST/rest/export.json
 
