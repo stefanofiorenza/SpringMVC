@@ -21,6 +21,7 @@ public class EmployeeFutureParsingThread implements Runnable{
 			while(this.employeeFuture.isDone()){
 				Employee employee = this.employeeFuture.get();
 				log.info(employee.toString());
+				
 			}
 		
 		

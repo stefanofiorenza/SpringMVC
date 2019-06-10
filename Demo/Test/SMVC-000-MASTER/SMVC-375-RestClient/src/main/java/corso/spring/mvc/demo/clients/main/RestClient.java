@@ -62,16 +62,16 @@ public class RestClient {
 		RestClientComponent restComponent= context.getBean(RestClientComponent.class);		
 		
 		testRestGetResponseEntity(restComponent.getRestTemplate(),ENDPOINT_GET_URI_JSON);
-		testRestGetResponseEntity(restComponent.getRestTemplate(),ENDPOINT_GET_URI_XML);
+		//testRestGetResponseEntity(restComponent.getRestTemplate(),ENDPOINT_GET_URI_XML);
 		
-		testRestPostEntity(restComponent.getRestTemplate(),ENDPOINT_POST_URI_JSON);
-		testRestPostEntity(restComponent.getRestTemplate(),ENDPOINT_POST_URI_XML);
-		testRestPostObject(restComponent.getRestTemplate());
+		//testRestPostEntity(restComponent.getRestTemplate(),ENDPOINT_POST_URI_JSON);
+		//testRestPostEntity(restComponent.getRestTemplate(),ENDPOINT_POST_URI_XML);
+		//testRestPostObject(restComponent.getRestTemplate());
 		
-		testRestExchangeApi_PostToApiJson(restComponent.getRestTemplate());
+		//testRestExchangeApi_PostToApiJson(restComponent.getRestTemplate());
 		
-		testRestExchangeApiWithCallback(restComponent.getRestTemplate());
-		testRestExchangeApiWithAsynchCallback();
+		//testRestExchangeApiWithCallback(restComponent.getRestTemplate());
+		//testRestExchangeApiWithAsynchCallback();
 	}
 	
 	
@@ -81,7 +81,7 @@ public class RestClient {
 		
 		ResponseEntity<Employee> response =  restTemplate.getForEntity(uri,Employee.class);
 		log.info(response.toString());
-		log.info("ResponseBody: "+response.getBody());		
+		log.info("ResponseBody: "+response.getBody());			
 	}
 	
 	
