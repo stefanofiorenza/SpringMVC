@@ -40,7 +40,7 @@ import corso.spring.mvc.demo.json.beans.Contact;
 import corso.spring.mvc.demo.json.beans.ContactCustomFields;
 import corso.spring.mvc.demo.json.mocks.ContactMocks;
 
-@Ignore
+//@Ignore
 @Slf4j
 public class TestBeanFields {
 

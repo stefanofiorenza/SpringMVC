@@ -232,7 +232,6 @@
 	
 
   <modules>  	
-	<module>SMVC-010-Commons</module>
   	<module>SMVC-100-Basics</module>
 	<module>SMVC-110-BasicAnnotations</module>
 	<module>SMVC-120-BasicJavaContext</module>
@@ -242,16 +241,17 @@
 	<module>SMVC-378-AjaxClient</module>
 	<module>SMVC-372-Jackson</module>
 	<module>SMVC-375-RestApi</module>	
-	<module>SMVC-400-ViewResolvers</module>
-	<module>SMVC-405-Tiles</module>
-	<module>SMVC-410-ViewExportBinaries</module>	
-	<module>SMVC-500-ViewResolvers</module>	
-	<module>SMVC-600-WebScopes</module>
-	<module>SMVC-700-CustomTags</module>	
+	<module>SMVC-400-StateMng</module>
+	<module>SMVC-500-ViewResolvers</module>
+	<module>SMVC-600-Resources</module>
+	<module>SMVC-700-CustomTags</module>
+	<module>SMVC-010-Commons</module>
 	<module>SMVC-800-WebsocketClient</module>
 	<module>SMVC-800-WebsocketServer</module>
 	<module>SMVC-800-WebSocketJSR356</module>
 	<module>SMVC-800-WebSocketSpringStomp</module>
+
+	<module>SMVC-LAB-PROMETRICS</module>
   </modules>
    
 </project>
