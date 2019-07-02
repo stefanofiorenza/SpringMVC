@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="customer/add.htm">add</a>
-<a href="customer/delete.htm">delete</a>
-<a href="customer/update.htm">update</a>
-<a href="customer/list.htm">list</a>
+<a href="form/load.htm">Link to Form Page</a>
 </body>
 </html>
