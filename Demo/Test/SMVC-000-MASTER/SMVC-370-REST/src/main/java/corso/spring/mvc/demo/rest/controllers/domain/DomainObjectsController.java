@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import corso.spring.mvc.demo.rest.beans.Employee;
+import corso.spring.mvc.demo.rest.controllers.exceptions.UserException;
 import corso.spring.mvc.demo.rest.utils.HttpUtils;
 
 
@@ -24,7 +25,7 @@ import corso.spring.mvc.demo.rest.utils.HttpUtils;
 public class DomainObjectsController {
 
 	@RequestMapping(value ="/demo/employee/get/xml", method = RequestMethod.GET, 
-			produces = MediaType.APPLICATION_XML_VALUE)
+			produces = MediaType.APPLICATION_XML_VALUE)	
 	public @ResponseBody Employee getEmployeeAsXml(){
 		return new Employee("stefano","stefano@email.it");
 	}
@@ -32,6 +33,7 @@ public class DomainObjectsController {
 	@RequestMapping(value ="/demo/employee/get/json", method = RequestMethod.GET, 
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Employee getEmployeeAsJson(){
+		//throw new UserException("User not found");
 		return new Employee("stefano","stefano@email.it");
 	}
 	
@@ -55,8 +57,7 @@ public class DomainObjectsController {
 			produces = MediaType.APPLICATION_JSON_VALUE,
 			consumes= MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody  ResponseEntity<Employee> echoEmployeeAsHttpEntity(@RequestBody Employee inserted){
-		 return new ResponseEntity<Employee>(inserted,HttpStatus.OK);
-		 
+		 return new ResponseEntity<Employee>(inserted,HttpStatus.OK);		 
 	}
 	
 
@@ -72,4 +73,7 @@ public class DomainObjectsController {
 		}
 		 return new ResponseEntity<Employee>(inserted,HttpStatus.OK);		 
 	}
+	
+	
+	
 }
