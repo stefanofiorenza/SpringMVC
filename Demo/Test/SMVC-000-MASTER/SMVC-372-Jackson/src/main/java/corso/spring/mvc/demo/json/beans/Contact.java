@@ -10,12 +10,16 @@ import lombok.Setter;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import corso.spring.mvc.demo.json.config.Consts;
+import corso.spring.mvc.demo.json.serializers.DateCustomSerializer;
 
 
 
@@ -28,7 +32,7 @@ import corso.spring.mvc.demo.json.config.Consts;
   @Type(value = TechnicalContact.class, name = Consts.ENUM_CTC_TECHNICAL) 
 })
 //@JsonFilter("FilterNameInBean")
-//@JsonInclude(Include.NON_NULL)  
+@JsonInclude(content=Include.NON_NULL)
 //@JsonIgnoreProperties({"name","telephone","joinDate"})
 public abstract class Contact {
 
@@ -67,7 +71,7 @@ public abstract class Contact {
 	@Getter
 	@Setter
 	@JsonView(JsonViews.EntityData.class)
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	//@JsonSerialize(using = DateCustomSerializer.class) 
 	private Date joinDate;
 	

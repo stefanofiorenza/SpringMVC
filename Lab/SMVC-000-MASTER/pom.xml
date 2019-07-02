@@ -1,0 +1,270 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>corso.spring.web.mvc</groupId>
+  <artifactId>SMVC-000-MASTER</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>SMVC-000-MASTER</name>
+  
+    
+		
+   <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>		
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+		<spring.version>4.3.9.RELEASE</spring.version>	 
+	<!-- 	<spring.version>4.3.12.RELEASE</spring.version>	 -->	
+		<junit.version>4.11</junit.version>
+		<javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+		
+		
+		<!-- 3rd part libs -->
+		<version.lombok>1.16.12</version.lombok>			
+	  	<version.jackson>2.6.3</version.jackson>
+	  	<version.commons.lang>3.4</version.commons.lang>
+		<version.commons.io>2.4</version.commons.io>	
+		<version.commons.fileupload>1.2</version.commons.fileupload>
+	  	<version.httpclient>4.4.1</version.httpclient>
+  	
+		<!-- Loggers -->
+		<version.logback>1.1.3</version.logback>	
+		<version.slf4j.org>1.7.13</version.slf4j.org>        
+		<version.jcloverslf4j>1.7.7</version.jcloverslf4j>
+		
+		<!-- Export lib -->
+		<version.csv>2.1.0</version.csv>
+		<version.common.upload>1.3.1</version.common.upload>
+		<version.poi>3.11</version.poi>
+		
+		 <!-- testing -->       
+        <rest-assured.version>3.0.1</rest-assured.version>
+        <assertj.version>3.6.1</assertj.version>
+        <org.hamcrest.version>1.3</org.hamcrest.version>
+        <mockito.version>1.9.5</mockito.version>
+        <junit.version>4.12</junit.version>
+        
+	</properties>
+	
+	
+  <dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+ 
+		 <dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-websocket</artifactId>
+			    <version>${spring.version}</version>
+			</dependency>		  
+	
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-messaging</artifactId>
+			   <version>${spring.version}</version>
+			</dependency>
+		
+ 
+ 		<!-- J2EE Web api -->
+	 	<dependency>
+		    <groupId>javax.servlet.jsp</groupId>
+		    <artifactId>javax.servlet.jsp-api</artifactId>
+		    <version>2.3.1</version>
+		    <scope>provided</scope>
+		</dependency>
+ 		
+ 		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+  
+ 	 	<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet-api.version}</version>
+            <scope>provided</scope>
+       </dependency>
+            
+	
+		<!-- LogBack dependencies -->
+			<dependency>
+	            <groupId>org.slf4j</groupId>
+	            <artifactId>slf4j-api</artifactId>
+	            <version>${version.slf4j.org}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>ch.qos.logback</groupId>
+	            <artifactId>logback-classic</artifactId>
+	            <version>${version.logback}</version>
+	            <scope>runtime</scope> 
+	         </dependency>
+	        <dependency>
+	            <groupId>org.slf4j</groupId>
+	            <artifactId>jcl-over-slf4j</artifactId>
+	            <version>${version.jcloverslf4j}</version>
+	            <!-- <scope>runtime</scope> --> <!-- some spring dependencies need to compile against jcl -->
+	        </dependency>
+	        <dependency> <!-- needed to bridge to slf4j for projects that use the log4j APIs directly -->
+	            <groupId>org.slf4j</groupId>
+	            <artifactId>log4j-over-slf4j</artifactId>
+	            <version>${version.slf4j.org}</version>
+	        </dependency>
+	    
+		
+			
+			<!--  Jackson -->				
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>		
+			<version>${version.jackson}</version>		
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${version.jackson}</version>
+		</dependency>
+				   
+		<!-- Other libs -->	
+  		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>		
+			<version>${version.lombok}</version>						
+		</dependency>		
+		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>		
+			<version>${version.commons.lang}</version>
+		</dependency>	
+						
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>${version.commons.fileupload}</version>
+		</dependency>
+						
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>	
+			<version>${version.commons.io}</version>			
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>		
+			<version>${version.httpclient}</version>
+		</dependency>	
+		
+			<!-- Export libs -->
+			<dependency>
+			    <groupId>net.sf.supercsv</groupId>
+			    <artifactId>super-csv</artifactId>
+			    <version>${version.csv}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>${version.poi}</version>
+			</dependency>
+			 <dependency>
+		    	<groupId>org.apache.poi</groupId>
+		    	<artifactId>poi-ooxml</artifactId>
+		    	<version>${version.poi}</version>
+			</dependency>
+		
+		
+			<!-- TEST libs -->
+			
+			  <!--  test -->
+		        <dependency>
+		            <groupId>junit</groupId>
+		            <artifactId>junit</artifactId>
+		            <version>${junit.version}</version>
+		            <scope>test</scope>
+		        </dependency>
+		        <dependency>
+		            <groupId>org.hamcrest</groupId>
+		            <artifactId>hamcrest-core</artifactId>
+		            <version>${org.hamcrest.version}</version>
+		            <scope>test</scope>
+		        </dependency>
+		        <dependency>
+		            <groupId>org.hamcrest</groupId>
+		            <artifactId>hamcrest-library</artifactId>
+		            <version>${org.hamcrest.version}</version>
+		            <scope>test</scope>
+		        </dependency>
+		        <dependency>
+		            <groupId>org.hamcrest</groupId>
+		            <artifactId>hamcrest-all</artifactId>
+		            <version>${org.hamcrest.version}</version>
+		            <scope>test</scope>
+		        </dependency>
+		        <dependency>
+		            <groupId>org.mockito</groupId>
+		            <artifactId>mockito-core</artifactId>
+		            <version>${mockito.version}</version>
+		        </dependency>
+        		
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-test</artifactId>
+			    <version>${spring.version}</version>
+			    <scope>test</scope>
+			</dependency>
+			
+		
+	</dependencies>
+	
+
+  <modules>  	
+  	<module>SMVC-010-Commons</module>
+  	<module>SMVC-100-Basics</module>
+	<module>SMVC-110-BasicAnnotations</module>
+	<module>SMVC-120-BasicJavaContext</module>
+	<module>SMVC-200-Handlers</module>
+	<module>SMVC-210-HandlersConfig</module>
+	<module>SMVC-300-Controllers</module>
+	<module>SMVC-310-Forms</module>	
+	<module>SMVC-320-RestControllers</module>
+	<module>SMVC-370-REST</module>	
+	<module>SMVC-372-Jackson</module>
+	<module>SMVC-375-RestApi</module>
+	<module>SMVC-375-RestClient</module>
+	<module>SMVC-378-AjaxClient</module>
+	<module>SMVC-400-ViewResolvers</module>
+	<module>SMVC-405-Tiles</module>
+	<module>SMVC-410-ViewExportBinaries</module>
+	<module>SMVC-500-CustomTags</module>	
+	<module>SMVC-600-WebScopes</module>
+	<module>SMVC-700-UTests</module>
+	<module>SMVC-800-WebsocketClient</module>
+	<module>SMVC-800-WebsocketServer</module>
+	<module>SMVC-800-WebSocketJSR356</module>
+	<module>SMVC-800-WebSocketSpringStomp</module>
+	<module>SMVC-720-IntegrationTest</module>
+	<module>SMVC-750-HandlerInterceptors</module>
+  </modules>
+   
+</project>

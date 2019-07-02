@@ -40,6 +40,7 @@ public class DateCustomSerializer extends StdSerializer<Date>{
 	public void serialize(Date value, JsonGenerator gen,
 			SerializerProvider provider) throws IOException {
 		
+		
 		String dayAsString="";
 		
 		switch (value.getDate()){

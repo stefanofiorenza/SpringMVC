@@ -44,7 +44,7 @@ public class TestFilteredFields {
 	}
 	
 	
-	//@Test
+	@Test
 	public void testBeanWithFilters() throws JsonProcessingException{
 				
 		//mock data
@@ -53,7 +53,7 @@ public class TestFilteredFields {
 		//filters added dynamically
 		FilterProvider filterProvider = mapFieldsToSkipIntoFilters(new String[]{"customer","telephone","groups"});
 
-		//writer e config di OM immutable!!! It needs to create a new one with aobe filters.
+		//writer e config di OM immutable!!! It needs to create a new one with filters.
 		String result =OM.writer(filterProvider).writeValueAsString(contact);;
 				
 		//assertions

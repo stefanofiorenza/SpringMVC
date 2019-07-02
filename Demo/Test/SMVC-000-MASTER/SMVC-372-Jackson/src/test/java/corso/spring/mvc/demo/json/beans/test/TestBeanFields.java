@@ -46,7 +46,7 @@ public class TestBeanFields {
 
 	private static final ObjectMapper OM=new ObjectMapper();
 	
-	//@Test
+	@Test
 	public void test_SerDeserialization_Bean() throws IOException{
 		
 		//mock data
@@ -72,7 +72,7 @@ public class TestBeanFields {
 			log.info(result);
 			
 			TypeReference<HashMap<String,Contact>> typeRefMapOfContacts 
-			  = new TypeReference<HashMap<String,Contact>>() {};
+			  = new TypeReference<HashMap<String,Contact>>(){} ;
 			  
 			Map<String,Contact> deserializedContactMaps=OM.readValue(result,typeRefMapOfContacts);	
 			assertTrue(contactMaps.size()==deserializedContactMaps.size());
@@ -121,11 +121,7 @@ public class TestBeanFields {
 		String result =OM.writeValueAsString(contact);	
 		log.info(result);
 	}
-	
-	@Test
-	public void test_jsonGetterAndSetter(){
-		
-	}
+
 	
 	
 	//@Test

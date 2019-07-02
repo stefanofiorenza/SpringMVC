@@ -1,0 +1,117 @@
+
+/* Filter Bar graphic */
+.filter-bar div.glyphicons{margin:5px 0 0 0;padding:10px 0 0 35px;}
+.filter-bar div.glyphicons i:before{top:12px;left:9px;font-size:17px;color:rgba(255, 255, 255, 0.8);}
+.filter-bar div.clearfix{padding:0;clear:both;float:none;display:block;height:0;margin:0;}
+.filter-bar.filter-bar-2{position:relative;margin-top:32px;background:#f5f5f5;padding:0 10px;}
+.filter-bar.filter-bar-2 .lbl{position:absolute;bottom:100%;left:10px;height:32px;line-height:32px;border:1px solid #dddddd;border-bottom:1px solid #f5f5f5;background:#f5f5f5;text-transform:uppercase;color:#222222;font-weight:600;}
+.filter-bar.filter-bar-2 .lbl i:before{top:8px;color:#222222;}
+.filter-bar{background:#f5f5f5;border:1px solid #d8d9da;border-left:none;border-right:none;line-height:30px;height:60px;margin-bottom:10px;}
+.filter-bar div.lbl{padding:0 10px 0 35px;background:#5DADE2;height:40px;line-height:40px;margin-right:10px;color:#fff;}
+
+
+/* Select in filterBar */
+.filter-bar .Select-control{	
+	height:30px;	
+	width: 260px;
+}
+
+.filter-bar .Select-placeholder,.filter-bar .Select-input{
+	height:30px;
+}
+
+.btn-primary{
+	background: #5DADE2;
+    border: 1px solid #2a87a7;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+h2.pageTitle{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+div.chatTable{
+	margin-left: 30px;
+}
+
+
+/*necessary for 1st column "selected" checkbox */
+.table-bordered thead:first-child tr:first-child>th:first-child, 
+.table-bordered tbody:first-child tr:first-child>td:first-child, 
+.table-bordered tbody:first-child tr:first-child>th:first-child {width: 15px;}
+
+/*fix border align between table cells */
+.table-bordered th {
+	 border-left: 0px solid #dddddd;
+}
+.table-bordered td {
+    border-left: 1px solid #dddddd; 
+}
+
+/* primary backgroung theme */
+.primary-background{border-color: #5DADE2; background-color: #5DADE2; color: #fff;}
+
+.with-selected-bar {line-height:30px;height:40px;margin-bottom:10px;}
+.with-selected-bar div.actionCtrl { padding:5px 0;display:block;float:left;line-height:36px;padding-left: 15px;}
+.with-selected-bar .Select-control{	height:30px;width: 260px;}
+
+input.input-xxxlarge{
+	width: 1000px;
+}
+
+div.inline{
+	float:left;
+	margin-top:10px;
+	margin-left:20px;	
+}
+
+input.h30 {
+	height:30px;
+}
+
+table.table th {
+	height:26px;
+	padding: 2px 2px 2px 4px;
+	font-size:13px
+}
+
+table.table td {	
+	padding: 3px 2px 2px 3px;
+	font-size:13px
+}
+
+input.form-control{
+	height:30px;
+}
+
+
+.statsheading{
+	background-color: #fff;
+	color:#837b7b;
+	height: 36px;
+	border: 1px solid #dddddd;
+	margin-left: 10px;
+	margin-right: 10px;
+	display: block;
+    text-align: center;
+    float: none;    
+    text-shadow: 0 1px 0 #555555;
+    text-transform: uppercase;
+    font-size: 14pt;
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0),inset -1px -1px 1px rgba(0, 0, 0, 0);
+    -moz-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0),inset -1px -1px 1px rgba(0, 0, 0, 0);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0),inset -1px -1px 1px rgba(0, 0, 0, 0);
+    height: 36px;
+    line-height: 36px;
+}
+
+/** overrides date-picker */
+.dt-picker{
+	width:86px;
+	float:left;			
+	margin-right:10;
+	margin-left:10;
+}
+
