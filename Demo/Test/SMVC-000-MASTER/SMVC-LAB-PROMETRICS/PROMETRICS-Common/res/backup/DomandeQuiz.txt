@@ -1,0 +1,69 @@
+
+QUESTION 1
+Testo:
+Given:
+AnInterface is an interface.
+AnAdapter0 is a non-abstract, non-final class with a zero argument constructor.
+An Adapterl is a non-abstract, non-final class without a zero argument constructor, but
+with a constructor that takes one int argument.
+Which two construct an anonymous inner class? (Choose two.)
+Risposte:
+A. AnAdapter1 aa = new AnAdapter1 () {}
+B. AnAdapter0 aa = new AnAdapter0 () {}
+C. AnAdapter0 aa = new AnAdapter0 (5) {}
+D. AnAdapter1 aa = new AnAdapter1 (5) {}
+E. AnInterface ai = new Anlnterface (5)) {}
+Answer: BD
+
+
+QUESTION 2
+Testo:
+Given:
+1. public class Method Over {
+2. public void set Var (int a, int b, float c) {
+3. }
+4. }
+Which two overload the set Var method? (Choose two.)
+Risposte:
+A. private void set Var(int a, float c, int b) {}
+B. protected void set Var(int a, int b, float c) {}
+C. public int set Var(int a, float c, int b) {return a:}
+D. public int set Var(int a, int b, float c) {return a:}
+E. protected float set Var(int a, int b, float c) {return c:}
+Answer: AC
+
+QUESTION 3
+Testo:
+Which two are equivalent? (Choose two.)
+Risposte:
+A. 16 > 4
+B. 16 / 2
+C. 16 * 4
+D. 16 >> 2
+E. 16 / 22
+F. 16 >>> 2
+Answer: DF
+
+QUESTION 4
+Testo:
+Which two method declarations are valid for an interface.? (Choose two)
+Risposte:
+A. Public double methoda():
+B. static void methoda(double d1)
+C. public final double methoda ();
+D. abstract public void methoda ();
+E. protected void methoda(double d1);
+Answer: AD
+
+QUESTION 5
+Testo:
+Which four types of object can be thrown using the throw statement? (Choose four.)
+Risposte:
+A. Error
+B. Event
+C. Object
+D. Exception
+E. Throwable
+F. Runtime Exception
+Answer: ADEF
+FineFile

@@ -1,0 +1,436 @@
+
+QUESTION 1
+Testo:
+You create an ASP.NET application for TestKing’s intr anet. All employee on the intranet use Internet
+Explorer.
+A page named UserAccount.aspx contains several controls that require postback to the server for event
+processing. The event handlers for these controls r equir e access to a database in order to complete their
+processing.
+Each time UserAccount.aspx performs a postback, ther e is a br ief period of time in which the browser
+window is blank while the page is refreshed. The control that had the focus prior to the postback does not
+have the focus after the page is re-rendered. This factor results in confusion and invalid data entry by
+some of the users.
+You need to modify UserAccount.aspx to pr event the browser window from going blank after a postback
+and to maintain the correct control focus after events are processed. You need to accomplish this task
+with the minimum amount of development effort.
+What should you do?
+Risposte:
+A.Add the following attribute to the HTML code for the controls that cause the postbacks: RunAt=”client”
+B.Add the following attribute to the HTML code for the controls that cause the postbacks: EnableViewState=”True”
+C.Add the following attribute to the Page directive for UserAccount.aspx: SmartNavigation=”True”
+D.Add the following attribute to the OutputCache directive for UserAccount.aspx: Location=”client”
+Answer:C
+Explanation:
+<b>Explanation:</b> When a page is requested by an Internet Explorer 5 browser, or later, smart navigation enhances
+the user's experience of the page by performing the following:
+eliminating the flash caused by navigation.
+persisting the scroll position when moving from page to page.
+persisting element focus between navigations.
+
+
+QUESTION 2
+Testo:
+You are a Web developer for a TestKing bookstore. You create a Web user control named TkBookTopics 
+that is defined in a file named TkBookTopics.ascx. TkBookTopics displays a list of book topics based on
+an author's profile identification number. The profile identification number is stored in a public property
+of TkBookTopics named AuthorProfile.
+You create an ASP.NET page named AuthorPage.aspx that contains an instance of the TkBookTopics
+Web user control. AuthorPage.aspx is opened by an HTTP-GET request that has two parameters. The
+parameters are named publisher ID and authorProfileID. The value of authorProfileID is a profile
+identification number.
+You want to enable output caching for the TkBookTopics Web user control. You need to ensure that the
+cached control is varied only by an author's profile identification number.
+What should you do?
+Risposte:
+A.Add the following element to the OutputCache directive for AuthorPage.aspx: 
+	VaryByParam=“TkBookTopics.AuthorProfile”
+B.Add the following element to the OutputCache directive for AuthorPage.aspx: 
+	VaryByControl=“TkBookTopics.AuthorProfile”
+C.Add the following element to the OutputCache directive for TkBookTopics.ascx: 
+	VaryByParam=“none”
+D.Add the following element to the OutputCache directive for TkBookTopics.ascx: 
+	VaryByControl=“authorProfileID”
+Answer:D
+Explanation:
+<b>Explanation:</b> You can vary user control output to the cache in two ways:
+1) With the user control name and the parameter. The VaryByParam attribute of the @OutputCache
+directive must be used. A) and C) are inadequate since both the control name and the parameter must be
+specified.
+2) With the VaryByControl attribute just the parameter should be supplied. This is the case in D), but not in B).
+
+Reference:.NET Framework Developer's Guide, Caching Multiple Versions of a User Control, Based on
+Parameters [C#]
+
+
+QUESTION 3
+Testo:
+You are maintaining an ASP.NET application named TestKingSalesForecast. The application is written
+in Visual C#.NET. The application includes a page named FirstQuarter.aspx that resides within the
+Sales namespace. The page class is named FirstQuarter.
+You discover that another developer inadver tently deleted the Page directive for FirstQuarter.aspx. You
+want to create a new Page directive to allow FirstQuarter.aspx to work properly.
+Which directive should you use?
+Risposte:
+A.&lt;%@Page Language="c#" Codebehind=”FirstQuarter.aspx.cs” Inherits=”FirstQuarter”%>
+B.&lt;%@Page Language="c#" Codebehind=”FirstQuarter.aspx.cs” ClassName=”Sales.FirstQuarter”%>
+C.&lt;%@Page Language="c#" Codebehind=”FirstQuarter.aspx.cs” Inherits=”Sales.FirstQuarter”%>
+D.&lt;%@Page Language="c#" Codebehind=”FirstQuarter.aspx.cs” ClassName=”Sales.FirstQuarter” Inherits=”FirstQuarter”%>
+Answer:C
+Explanation:
+<b>Explanation:</b> The Inherits attribute in the @Page directive defines a code-behind class for the page to inherit.
+As FirstQuarter.aspx resides within the Sales namespace we should use Inherits=”Sales.FirstQuarter
+Note: The @Page directive defines page-specific (.aspx file) attributes used by the ASP.NET page parser and
+compiler.
+Reference:.NET Framework General Reference, @Page
+Incorrect Answers
+A: As FirstQuarter.aspx resides within the Sales namespace we should use
+Inherits=”Sales.FirstQuarter"
+B, D: The ClassName attribute specifies the class name for the page that will be automatically compiled
+dynamically when the page is requested. We should not use ClassName here.
+
+
+
+QUESTION 4
+Testo:
+You are creating and ASP.NET application for the mortgage services department of TestKing Inc. The
+application will be used for generating documents required during the closing process of a home
+purchase.
+TestKing already has a component written in Visual C#.NET that identifies which forms are required to
+be pr inted based on a set of cr iter ia specified by the closing agent. The name of the component
+namespace is TestKing.Mor tgage. The name of the class is Closing.
+You create an ASP.NET page named Purchase.aspx. You add a r eference to the assembly that contains
+the TestKing.Mortgage namespace. The Codebehind file for Purchase.aspx includes the following code:
+usingTestKing.Mortgage;
+You add a method to the code-behind file to instantiate the Closing class.
+Which code segment should you include in the method to instantiate the class?
+A. ClosingTKClosing= new Closing();
+B. ClosingTKClosing= Server.CreateObject(“TestKing.Mortgage.Closing”);
+C. objectTKClosing=Server.CreateObject(“closing”);
+D. Type TKType=Type.GetTypeFromProgID(“TestKing.Mortgage.Closing”,“localhost”, true);
+Risposte:
+Answer:A
+Explanation:
+<b>Explanation:</b> We simply instantiate an object with the class with the New constructor.
+Note: Web Forms pages have code-behind files associated with them. These files are created automatically
+when you create a new Web form. They have the same base name as the Web form with the.vb or.cs filename
+extension added
+Incorrect Answers
+B, C: The CreateObject function creates and returns a reference to a COM object. CreateObject cannot be used
+to create instances of classes in Visual Basic unless those classes are explicitly exposed as COM
+components.<br>
+D: The Type.GetTypeFromProgID method is provided for COM support. Program IDs are not used in
+Microsoft.NET Framework because they have been superceded by the concept of namespace.
+
+QUESTION 5
+You create a class named TKFormat that has two public properties. One of the properties is named Size,
+and the other property is named Color. You want to use the TKFormat class in custom server controls to
+expose format properties to container pages.
+You add the following statements to a custom ser ver control named MessageRepeater:
+private TKFormat_formatter= new TKFormat();<br>
+public TKFormatFormat<br>
+{<br>
+get { return_formatter; }<br>
+}<br>
+You create a container page named MessageContainer.aspx to test your custom control. You register the
+control as follows:
+&lt;%@Register Tagprefix=”testkctl”Namespace=”MessageControls” Assembly=”MessageControls”%><br>
+You want to add an instance of the control to a test page so that the size property is set to 10 and the color
+property is set to red.
+Which code should you use?
+Risposte:
+A. &lt;testkctl:MessageRepeater Format-Color=”red” Format-Size=”10” />
+B. &lt;testkctl:MessageRepeater Format-Color=”red” Format-Size=”10” runat=”server” />
+C. &lt;testkctl:MessageRepeater Color=”red” Size=”10” runat=”server” />
+D. &lt;testkctl:MessageRepeater Format=”Color:red; size:10” />
+Answer:B
+Explanation:
+<b>Explanation:</b> ASP.NET has a special syntax for setting subproperties. The"-"syntax denotes a subproperty.
+The Format.Color and Format.Size properties are denoted by Format-Color and Format-Size respectively. We
+should also specify that the control should run at the server.
+
+Incorrect Answers
+A: As this is a custom server control we should specify that it should run at the server.
+C, D: We must use the"-"syntax denotes a subproperties
+
+QUESTION 6
+Testo:
+You create an ASP.NET page named Location.aspx. Location.aspx contains a Web user control that
+displays a drop-down list box of counties. The Web user control is named CountyList and is defined in a
+file named CountyList.ascx. The name of the DropDownList control in CountyList.ascx is TKCounty.
+You try to add code to the Page.Load event handler for Location.aspx, but you discover that you cannot
+access TKCounty from mode in Location.aspx. You want to ensure that code within Location.aspx can
+access properties of TKCounty.
+What should you do?
+Risposte:
+A. In the code-behind file for CountyList.ascx add the following line of code:<br>
+protected DropDownList TKCounty;
+B. In the code-behind file for CountyList.ascx, add the following line of code:<br>
+public DropDownList TKCounty;
+C. In the code-behind file for Location.aspx, add the following line of code:<br>
+protected DropDownList TKCounty;
+D. In the code-behind file for Location.aspx, add the following line of code:<br>
+public DropDownList TKCounty;
+Answer:B
+Explanation:
+<b>Explanation:</b> We must declare the TKCounty as public in the file in which it is defined (CountyList.ascx).
+Note: The Public keyword in the Dim statement declares elements to be accessible from anywhere within the
+same project, from other projects that reference the project, and from an assembly built from the project.
+Reference: Visual Basic Language Concepts, Accessibility
+
+Incorrect Answers
+A, C: The Protected keyword in the Dim statement declares elements to be accessible only from within the
+same class, or from a class derived from this class. However, do not want to protect MyCount, at the
+contrary we must make it public.<br>
+D: We must declare it public in the files, in which it is defined, not Location.aspx where it is only used.
+
+
+QUESTION 7
+Testo:
+You create an ASP.NET page that uses images to identify ar eas where a user can click to initiate actions.
+The users of the application use Internet Explorer.
+You want to provide a pop-up window when the user moves the mouse pointer over an image. You want
+the pop-up window to display text that identifies the action that will be taken if the user clicks the image.
+What should you do?
+A. For each image, set the AlternateText property to specify the text you want to display, and set the
+ToolTip property to True.
+B. For each image, set the ToolTip property to specify the text you want to display.
+C. In the onmouseover event handler for each image, add code that calls the RaiseBubbleEvent() method of
+the System.Web.UI.WebControls.Image class.
+D. In the onmouseover event handler for each image, add code that calls the ToString() method of the
+System.Web.UI.WebControls.Image class.
+Risposte:
+Answer:B
+Explanation:
+<b>Explanation:</b> WebControl.ToolTip property gets or sets the text displayed when the mouse pointer hovers over
+the Web server control. The use of the ToolTip property meets the requirement of this scenario.
+Reference:.NET Framework Class Library, WebControl.ToolTip Property [C#]
+
+Incorrect Answers
+A: The AlternateText property is used to specify the text to display if the image is not available.
+C: The RaiseBubbleEvent is not useful here.
+Note: ASP.NET server controls such as the Repeater, DataList and DataGrid Web controls can contain
+child controls that raise events. Rather than each button raising an event individually, events from the
+nested controls are"bubbled"—that is, they are sent to the control's parent.
+D: The ToStringMethod() would not by itself provide the functionality required.
+
+QUESTION 8
+Testo:
+You create a user control named Address that is defined in a file named Address.ascx.Address displays
+address fields in an HTML table.
+Some container pages might contain more than one instance of the Address user control. For example, a
+page might contain a shipping address and a billing address. You add a public property named
+TKCaption to the Address user control. The caption property will be used to distinguish the different
+instances.
+You want the caption to be displayed in the first &lt;td> element of the table of address fields. You need to
+add code to the &lt;td> element of the table to display the caption.
+Which code should you use?
+Risposte:
+A. &lt;td>&lt;%@=TKCaption%>&lt;/td>
+B. &lt;td>&lt;script runat=”server”>TKCaption&lt;/script>&lt;/td>
+C. &lt;td>&lt;script>document.Write (“ TKCaption”); &lt;/script>&lt;/td>
+D. &lt;td>=TKCaption&lt;/td>
+Answer:A
+Explanation:
+<b>Explanation:</b> TKCaption is a public property contained on the Web server. We reference it with the
+&lt;%@=TKCaption%> element
+
+Incorrect Answers
+B, C: Scrips are not called for. We just want to display a property.
+D: To access the public property we must use an &lt;%@%> element.
+
+
+QUESTION 9
+Testo:
+You create an ASP.NET page named Subscribe.aspx for users to Subscribe to e-mail lists. You include an
+existing user control named ListSubscribe in your page. ListSubscribe has two constituent controls. One
+control is a TextBox control named listNameText, and the other control is a Button control named
+SubscribeButton. ListSubscribe is defined in the ListSubscribe.ascx file.
+To add ListSubscribe to Subscribe.aspx, you add the following tag:
+&lt;email:ListSubscribe id=”ctlSubscribe”runat=”server” /> <br>
+You add a Label control named listNameLabel to the container page. When a user Subscribes to a list by
+enter ing a list name in listNameText and clicking the SubscribeButton button, you want the page to
+display the list name in listNameLabel.
+Which two actions should you take? (Each correct answer presents part of the solution. Choose two)
+Risposte:
+A.Add the following statement to the declaration section of ListSubscribe.ascx:<br>
+public TextBox listNameText;
+B.Add the following statement to the declaration section of Subscribe.aspx:<br>
+public TextBox listNameText;
+C.Add the following statement to the Page.Load event handler for Subscribe.aspx:<br>
+if(!Page.IsPostBack) <br>
+{<br>
+listName Label.Text= ctlSubscribe.listNameText.Text;<br>
+}<br>
+D.Add the following statement to the Page.Load event handler for Subscribe.aspx:<br>
+if(Page.IsPostBack)<br>
+{listName Label.Text= ctlSubscribe.listNameText.Text;<br>
+}<br>
+E.Add the following statement to the Page.Load event handler for ListSubscribe.ascx:<br>
+if(! Page.IsPostBack)<br>
+{<br>
+listName Label.Text=listNameText.Text;<br>
+}<br>
+F.Add the following statement to the Page.Load event handler for ListSubscribe.ascx:<br>
+if(Page.IsPostBack)<br>
+{listName Label.Text= listNameText.Text;<br>
+}<br>
+Answer:A, D
+Explanation:
+<b>Explanation:</b>
+A: We must expoSethe listNameText control by declaring it as public. The ListSubscribe.ascx file contains
+the listNameText control so we expose it in this file.
+Note: The controls that make up a user control are called constituent controls. These controls are
+normally declared private, and thus cannot be accessed by the developer. If you want to make properties
+of these controls available to future users, you must expoSethem to the user.
+D: If the control is reloaded in the Subscribe.aspx file due to a responSeto a client postback we should set
+the listNameLabel.Text property.
+Note: The UserControl.IsPostBack property gets a value indicating whether the user control is being
+loaded in responSeto a client postback, or if it is being loaded and accessed for the first time.
+Reference:
+Visual Basic and Visual C# Concepts, Exposing Properties of Constituent Controls
+.NET Framework Class Library, UserControl.IsPostBack Property
+Incorrect Answers
+B: The listNameText control is defined in ListSubscribe.aspx, not in Subscribe.aspx.
+C: This would only copy the text when the page is initially loaded.
+E, F: We should use the Page.Load event of Subscribe.aspx, not for ListSubscribe.aspx.
+
+QUESTION 10
+You create an ASP.NET server control to display date and time information. You want to enable other
+programmers who use your control to customize the style properties of a Label control named
+timeTKLabel. The timeTKLabel control displays the date and time.
+You create two custom property procedures to accomplish this goal. One procedure modified the
+BackColor property of the constituent controls. The other procedure modifies the ForeColor property of
+the constituent controls.
+In addition to theSetwo custom property procedures, you want to allow users to apply one of two
+predefined styles. The predefined styles are created in the following function:<br>
+public Style GetStyle (int styleType)<br>
+{<br>
+Style myStyle= new Style();<br>
+switch (style Type)<br>
+{case 1:<br>
+myStyle.ForeColor= System.Drawing.Color.White;<br>
+myStyle.BackColor= System.Drawing.Color.Black;<br>
+break;<br>
+}<br>
+return myStyle;<br>
+}<br>
+You want to write a public method that will apply these styles. You do not want to overwrite the
+ForeColor property and BackColor property if the Label control of these properties are already set by
+using the custom property procedures.
+Which code segment should you use for this method?
+Risposte:
+A. public void PickStyle (int style Type)<br>
+{<br>
+Style myStyle= GetStyle (style Type);<br>
+time TKLabel.ApplyStyle (myStyle);<br>
+}<br>
+B. public void PickStyle (int style Type)<br>
+{<br>
+Style myStyle= GetStyle (style Type);<br>
+time TKLabel.MergeStyle (myStyle);<br>
+}<br>
+C. public void PickStyle (int style Type)<br>
+{<br>
+Style myStyle= GetStyle (style Type);<br>
+time TKLabel.ForeColor= myStyle.ForeColor;<br>
+time TKLabel.BackColor= myStyle.BackColor; <br>
+}<br>
+D. public void PickStyle (int style Type)<br>
+{<br>
+Style myStyle= GetStyle (style Type);<br>
+time TKLabel.CssClass= myStyle.CssClass;<br>
+}<br>
+Answer:B
+Explanation:
+<b>Explanation:</b> The WebControl.MergeStyle method copies any nonblank elements of the specified style to the
+Web control, but will not overwrite any existing style elements of the control. This method is used primarily by
+control developers.
+Reference:.NET Framework Class Library, WebControl.MergeStyle Method [C#]
+
+Incorrect Answers
+A: WebControl.ApplyStyle Method copies any nonblank elements of the specified style to the Web control,
+overwriting any existing style elements of the control. We don’t want to ov erwrite any existing style
+elements however.
+C: We don’t want to overwrite any existing style elements.-
+D: The WebControl.CssClass Property gets or sets the Cascading Style Sheet (CSS) class rendered by the
+Web server control on the client. It not useful in this scenario though.
+
+
+QUESTION 11
+Testo:
+You are a Web developer for a travel company called TestKing travels. You are developing a Web site
+for customers who participate in the company’s frequent flyer program.
+The frequent flyer program includesthree levels of award for customers. The levels are named Emerald,
+Ruby, and Diamond. For each award level, the page contains content specific to that award level. The
+page contents are contained in three user controls, which are named Emerald.ascx, Ruby.ascx, and
+Diamond.ascx.
+You want to dynamically load and display the proper page header based on the value contained in a
+variable named awardLevel. The awardLevel variable is a property of the page. In addition, you want to
+minimize the mount of memory resources each page uses.
+Which code should you use in the Page.Load event handler?
+Risposte:
+A. UserControl header UserControl;<br>
+switch(awardLevel)<br>
+{case “Emerald”:<br>
+headerUserControl= (UserControl) LoadControl (“Emerald.ascx”);<br>
+break;<br>
+case “Ruby”:<br>
+headerUserControl= (UserControl) LoadControl (“Ruby.ascx”);<br>
+break;<br>
+case “Diamond”:<br>
+headerUserControl= (UserControl) LoadControl (“Diamond.ascx”);<br>
+break;<br>
+Controls.Add(header UserControl);<br>
+}<br>
+B. UserControl header UserControl;<br>
+switch(awardLevel)<br>
+{case “Emerald”:<br>
+headerUserControl= (UserControl) LoadControl (“Emerald.ascx”);<br>
+break; <br>
+case “Ruby”: <br>
+headerUserControl= (UserControl) LoadControl (“Ruby.ascx”);<br>
+break;<br>
+case “Diamond”:<br>
+headerUserControl= (UserControl) LoadControl (“Diamond.ascx”);<br>
+break;<br>
+}<br>
+C.Emeraldheader UserControl.Visible= false;<br>
+r ubyheader UserControl.Visible= false;<br>
+Diamondheader UserControl.Visible= false;<br>
+switch(awardLevel)<br>
+{case “Emerald”:<br>
+emeraldHeaderControl.Visible= true;<br>
+break;<br>
+case “Ruby”:<br>
+rubyHeaderControl.Visible= true;<br>
+break;<br>
+case “Diamond”:<br>
+DiamondHeaderControl.Visible= true;<br>
+break<br>
+}<br>
+D. UserControlEmeraldheader Control;<br>
+UserControl r ubyheader Control;<br>
+UserControl Diamondheader Control;<br>
+emeraldheaderControl= (UserControl) LoadControl (“Emerald.aspx”);<br>
+rubyheaderControl= (UserControl) LoadControl (“Ruby.aspx”);<br>
+DiamondheaderControl= (UserControl) LoadControl (“Diamond.aspx”;<br>
+switch(awardLevel)<br>
+{case “ Emerald”:<br>
+Controls.Add(emeraldheaderControl);<br>
+break;<br>
+case “Ruby”:<br>
+Controls.Add(rubyheaderControl);<br>
+break;<br>
+case “Diamond”:<br>
+Controls.Add(DiamondheaderControl);<br>
+break;<br>
+}<br>
+Answer:A
+Explanation:
+<b>Explanation:</b> The TemplateControl.LoadControl method obtains a UserControl object from a user control file.
+Reference:.NET Framework Class Library, TemplateControl.LoadControl Method [C#]
+Incorrect Answers
+B: We must add the control in order to display it.
+C: We must load the user controls.
+D: Loading all three controls increase the demand on the system resource.
+

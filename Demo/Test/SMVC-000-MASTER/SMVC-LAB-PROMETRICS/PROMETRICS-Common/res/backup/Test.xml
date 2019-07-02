@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Test>
+
+   <Domanda id="1">
+    <Testo>
+You are the network administrator for Sito.com. The Sito network contains seven application
+servers. Each application server runs a database application named TestApp.
+Requirements for TestApp state that when you add a new user, you must add the user to the server that has the most available disk space.
+You need to ensure that you meet the requirements when you add new users to TestKingApp.
+What should you do?   
+    </Testo>
+    
+    <Risposte>
+    
+     <Risposta>
+		<Risposta-testo> 
+		Use Event Viewer to review the application logs on each of the seven servers</Risposta-testo> 
+		<Risposta-Lettera>A</Risposta-Lettera> 
+    </Risposta>
+   
+     <Risposta>
+		<Risposta-testo> 
+			Use Performance Logs and Alerts to record the PhysicalDisk object on all seven servers.
+		</Risposta-testo> 
+		<Risposta-Lettera>B</Risposta-Lettera> 
+    </Risposta>
+   
+     <Risposta>
+		<Risposta-testo> 
+			Use Task Manager to view the performance data on each of the seven servers.
+		</Risposta-testo> 
+		<Risposta-Lettera>C</Risposta-Lettera> 
+    </Risposta>
+   
+     <Risposta>
+		<Risposta-testo> 
+			Use System Monitor to generate a histogram view of the LogicalDisk object on all seven servers.		
+		</Risposta-testo> 
+		<Risposta-Lettera>D</Risposta-Lettera> 
+    </Risposta>
+
+    </Risposte>
+    
+    <Tipo>facile</Tipo>
+    <Punti>1</Punti>
+    <RispostaEsatta>D</RispostaEsatta>
+    <Spiegazione>
+System Monitor shows real-time performance data based on Object counters, and can display the
+log data recorded by Performance Logs And Alerts either in the form of Counter (interval polling) logs, or
+Trace (event-driven) logs. Logs written by Performance Logs And Alerts can be loaded into System Monitor for
+analysis. The System Monitor is designed for real-time reporting of data to a console interface, and can be
+reported in graph, histogram, or numeric form. This should aid you in ensuring that you meet the stated
+requirements.    
+    </Spiegazione>
+  </Domanda>
+    
+	<Domanda id="2">    
+	<Testo>
+You are the network administrator for Application.com. All network servers run Windows Server 2003.
+The network includes a file server named Application.com1. Application.com1 contains a single disk for system files and two SCSI hard disks that comprise a 72-GB mirrored volume with 65 GB of read-only data. Users
+connect to this data by using shortcuts on their desktops.
+Testking1 is scheduled for replacement. You have a scheduled maintenance window to complete this task.
+Before the maintenance window, you build a new server.
+You need to bring the new server online with current data and re-establish redundancy as quickly as
+possible. You must also ensure that the desktop shortcuts will continue to function.
+What should you do?
+    </Testo>
+    
+    <Risposte>
+    
+     <Risposta>
+		<Risposta-testo> 
+		Name the new server Application.com1
+		Create a new mirrored volume by using two 72-GB disks.
+			Connect Application.com2 to the network and copy the data from Application.com1.
+		</Risposta-testo> 
+		<Risposta-Lettera>A</Risposta-Lettera> 
+    </Risposta>
+   
+     <Risposta>
+		<Risposta-testo> 
+			Name the new server Application.com1.Move both disks from the old Application.com1 to the new Application.com1.Scan the disks for changes. Import the disks. Connect the new Application.com1 to the network.
+		</Risposta-testo> 
+		<Risposta-Lettera>B</Risposta-Lettera> 
+    </Risposta>
+   
+     <Risposta>
+		<Risposta-testo> 
+			Name the new server Application.com1. Break the mirror on the old Application.com1.
+			Move one of the disks from the old Application.com1 to the new Application.com1.
+			Scan the disk for changes. Initialize the disk. Select the spare disk and create the mirror.
+			Connect the new Testking1 to the network.
+		</Risposta-testo> 
+		<Risposta-Lettera>C</Risposta-Lettera> 
+    </Risposta>
+   
+     <Risposta>
+		<Risposta-testo> 
+			Name the new server Application.com1.
+			Remove one of the disks in the mirror from the old Application.com1.
+			Move the disk on the new Application.com1.
+			Scan the disk for changes.
+			Import the disk,
+			Shut down the old Application.com1. and connect the new Application.com1. to the network.	
+		</Risposta-testo> 
+		<Risposta-Lettera>B</Risposta-Lettera> 
+    </Risposta>
+
+    </Risposte>
+    
+    <Tipo>difficile</Tipo>
+    <Punti>4</Punti>
+    <RispostaEsatta>B</RispostaEsatta>
+    <Spiegazione>
+You have to make use of the existing old Application.com1 disks to make sure that the current data will
+be brought online. When moving disks from one computer to another keep in mind that before disconnecting
+the disks from the old Application.com1 you must make sure the status of all volumes on each of the disks is healthy.
+For any volumes that are not healthy, repair the volumes before you move the disks. After you physically
+connect the disks to the new TestKing1, in Disk Management, open the Action menu and choose Rescan Disks.
+The scanning will detect changes. The new disk will show up as Dynamic/Foreign. By default,
+Dynamic/Foreign disks and should be brought online automatically, but if not, bring it online by right-clicking
+the disk and selecting Online.
+To make Dynamic/Foreign disks useable, you must import it. The disk group remain as is and the database does
+not change.
+When connecting new Application.com1 to the network you will enable users to use their existing shortcuts.
+    </Spiegazione>
+  </Domanda>  
+     
+  <Domanda id="3">    
+  <Testo>
+You are the network administrator for Application.com. All network servers run Windows Server 2003.
+The network includes a file server named Application.com1. Application.com1 contains a single disk for system files and two SCSI hard disks that comprise a 72-GB mirrored volume with 65 GB of read-only data. Users
+connect to this data by using shortcuts on their desktops.
+Testking1 is scheduled for replacement. You have a scheduled maintenance window to complete this task.
+Before the maintenance window, you build a new server.
+You need to bring the new server online with current data and re-establish redundancy as quickly as
+possible. You must also ensure that the desktop shortcuts will continue to function.
+What should you do?
+    </Testo>
+    
+    <Risposte>
+    
+     <Risposta>
+		<Risposta-testo> 
+		Name the new server Application.com1
+		Create a new mirrored volume by using two 72-GB disks.
+			Connect Application.com2 to the network and copy the data from Application.com1.
+		</Risposta-testo> 
+		<Risposta-Lettera>A</Risposta-Lettera> 
+    </Risposta>
+   
+     <Risposta>
+		<Risposta-testo> 
+			Name the new server Application.com1.Move both disks from the old Application.com1 to the new Application.com1.Scan the disks for changes. Import the disks. Connect the new Application.com1 to the network.
+		</Risposta-testo> 
+		<Risposta-Lettera>B</Risposta-Lettera> 
+    </Risposta>
+   
+     <Risposta>
+		<Risposta-testo> 
+			Name the new server Application.com1. Break the mirror on the old Application.com1.
+			Move one of the disks from the old Application.com1 to the new Application.com1.
+			Scan the disk for changes. Initialize the disk. Select the spare disk and create the mirror.
+			Connect the new Testking1 to the network.
+		</Risposta-testo> 
+		<Risposta-Lettera>C</Risposta-Lettera> 
+    </Risposta>
+   
+     <Risposta>
+		<Risposta-testo> 
+			Name the new server Application.com1.
+			Remove one of the disks in the mirror from the old Application.com1.
+			Move the disk on the new Application.com1.
+			Scan the disk for changes.
+			Import the disk,
+			Shut down the old Application.com1. and connect the new Application.com1. to the network.	
+		</Risposta-testo> 
+		<Risposta-Lettera>B</Risposta-Lettera> 
+    </Risposta>
+
+    </Risposte>
+    
+    <Tipo>difficile</Tipo>
+    <Punti>4</Punti>
+    <RispostaEsatta>B</RispostaEsatta>
+    <Spiegazione>
+You have to make use of the existing old Application.com1 disks to make sure that the current data will
+be brought online. When moving disks from one computer to another keep in mind that before disconnecting
+the disks from the old Application.com1 you must make sure the status of all volumes on each of the disks is healthy.
+For any volumes that are not healthy, repair the volumes before you move the disks. After you physically
+connect the disks to the new TestKing1, in Disk Management, open the Action menu and choose Rescan Disks.
+The scanning will detect changes. The new disk will show up as Dynamic/Foreign. By default,
+Dynamic/Foreign disks and should be brought online automatically, but if not, bring it online by right-clicking
+the disk and selecting Online.
+To make Dynamic/Foreign disks useable, you must import it. The disk group remain as is and the database does
+not change.
+When connecting new Application.com1 to the network you will enable users to use their existing shortcuts.
+    </Spiegazione>
+  </Domanda>  
+  
+
+  </Test>
+  
+  
