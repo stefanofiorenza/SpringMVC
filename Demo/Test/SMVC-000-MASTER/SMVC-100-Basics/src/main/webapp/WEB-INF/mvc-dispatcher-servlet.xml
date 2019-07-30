@@ -13,7 +13,6 @@
 		</property>
 	</bean>
 
-	<bean name="/welcome.htm" 
-		class="corso.spring.mvc.demo.basic.HelloWorldController" />
+	<bean name="/welcome.htm" class="corso.spring.mvc.demo.basic.HelloWorldController" />
 
 </beans>

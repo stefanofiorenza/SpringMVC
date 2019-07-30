@@ -32,7 +32,7 @@ public class UserFormController {
 	public ModelAndView saveUser(User user) {
 		log.info("Reveived User: "+user.toString());
 		ModelAndView mav = new ModelAndView("frmUserView");
-		mav.addObject("msg", "Message From Controller");
+		mav.addObject("msg", "User Saved");
 		mav.addObject("userForm",user);
 		return mav;
 	}

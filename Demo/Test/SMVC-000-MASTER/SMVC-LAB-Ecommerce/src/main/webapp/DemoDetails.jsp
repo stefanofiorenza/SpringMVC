@@ -21,6 +21,8 @@
 	<link href="resources/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap-responsive.min.css" rel="stylesheet">
 	<link href="resources/bootstrap/extend/bootstrap-wysihtml5/css/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet">
 	
+	
+	
 	<!-- Select2 -->
 	<link rel="stylesheet" href="resources/theme/scripts/select2/select2.css"/>
 	
@@ -236,11 +238,7 @@
 	<!-- Uniform -->
 	<script src="resources/theme/scripts/pixelmatrix-uniform/jquery.uniform.min.js"></script>
 	
-	<!-- Bootstrap Script -->
-	<script src="resources/bootstrap/js/bootstrap.min.js"></script>
-	
-	<!-- Bootstrap Extended -->
-	<script src="resources/bootstrap/extend/bootstrap-select/bootstrap-select.js"></script>
+
 	
 	<!-- 
 	<script src="resources/bootstrap/extend/bootstrap-toggle-buttons/static/js/jquery.toggle.buttons.js"></script>

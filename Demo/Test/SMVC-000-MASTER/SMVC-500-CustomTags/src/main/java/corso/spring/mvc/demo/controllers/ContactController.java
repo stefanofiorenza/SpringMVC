@@ -42,7 +42,7 @@ public class ContactController {
 	}
 	
 	@RequestMapping(value = "/newContactPage", method = RequestMethod.GET)
-	public String formContactView() {		
+	public String formContactView() {			
 		return "frmContactView";
 	}
 	

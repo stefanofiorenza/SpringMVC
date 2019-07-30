@@ -102,29 +102,7 @@
 		</div>
 		
 		<div id="wrapper">
-			<div id="menu" class="hidden-phone">
-				<div id="menuInner">
-					<div id="search">
-						<input type="text" placeholder="Quick search ..." />
-						<button class="glyphicons search"><i></i></button>
-					</div>
-					
-					<ul>
-						<li class="heading"><span>E Shop</span></li>
-						<li class="glyphicons search"><a href="finances.html?lang=en"><i></i><span>Search Products</span></a></li>
-					</ul>
-					<ul>
-						<li class="heading"><span>Users</span></li>
-						<li class="glyphicons user_add"><a href="finances.html?lang=en"><i></i><span>Create User</span></a></li>
-						<li class="glyphicons group"><a href="finances.html?lang=en"><i></i><span>Admin Users</span></a></li>		
-					</ul>				
-					<ul>
-						<li class="heading"><span>Admin</span></li>					
-						<li class="glyphicons gift"><a href="finances.html?lang=en"><i></i><span>Create Product</span></a></li>	
-						<li class="glyphicons table"><a href="finances.html?lang=en"><i></i><span>Admin Products</span></a></li>									
-					</ul>
-				</div>
-		</div>
+			
 		<div id="content">
 			
 

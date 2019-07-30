@@ -14,8 +14,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-@Configuration //abilita la classe a costruire ed iniettare beans nel contesto
-@EnableWebMvc //abilita la classe ad essere un contesto web utilizzabile per costruire la DispatchetServlet
+@Configuration 
+@EnableWebMvc 
 @ComponentScan(value={"corso.spring.mvc.demo.controllers","corso.spring.mvc.user.api.services"})
 @Slf4j
 public class MySmvcInitializer extends WebMvcConfigurerAdapter {
